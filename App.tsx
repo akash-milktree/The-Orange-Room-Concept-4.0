@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import OfferingsSection from './components/OfferingsSection';
+import NewsSection from './components/NewsSection';
 import MarqueeSection from './components/MarqueeSection';
 import AwardsSection from './components/AwardsSection';
 import BookingSection from './components/BookingSection';
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Hero />
         <OfferingsSection />
         <MarqueeSection />
+        <NewsSection />
         <AwardsSection />
         <BookingSection />
         <LogoMarqueeSection />
