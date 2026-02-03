@@ -4,7 +4,6 @@ import Navigation from './components/Navigation.tsx';
 import Sidebar from './components/Sidebar.tsx';
 import Hero from './components/Hero.tsx';
 import OfferingsSection from './components/OfferingsSection.tsx';
-import NewsSection from './components/NewsSection.tsx';
 import MarqueeSection from './components/MarqueeSection.tsx';
 import AwardsSection from './components/AwardsSection.tsx';
 import BookingSection from './components/BookingSection.tsx';
@@ -32,7 +31,6 @@ const App: React.FC = () => {
         <Hero />
         <OfferingsSection />
         <MarqueeSection />
-        <NewsSection />
         <AwardsSection />
         <BookingSection />
         <LogoMarqueeSection />
