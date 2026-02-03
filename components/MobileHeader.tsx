@@ -10,17 +10,24 @@ interface MobileHeaderProps {
 const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen }) => {
   return (
     <header className="fixed top-0 left-0 right-0 h-20 bg-[#1a1919]/95 backdrop-blur-md z-[100] border-b-2 border-white/50 flex items-center lg:hidden">
-      {/* Center Branding - Now on the left */}
-      <div className="flex-1 px-6 flex items-center justify-between">
-        <span className="text-[12px] font-black tracking-[0.4em] text-white uppercase truncate">
-          Orange Rooms
-        </span>
+      {/* Center Branding - Logo + Est label */}
+      <div className="flex-1 px-4 sm:px-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <img 
+            src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/orange-logo-1.png" 
+            alt="Orange Rooms" 
+            className="h-12 sm:h-14 w-auto"
+          />
+          <span className="text-[10px] font-black tracking-[0.4em] text-white uppercase hidden sm:block">
+            Orange Rooms
+          </span>
+        </div>
         <span className="text-[8px] font-black tracking-[0.2em] text-[#F29100] uppercase opacity-60">
-          EST. 2019
+          EST. 2001
         </span>
       </div>
 
-      {/* Menu Trigger - Moved to the right */}
+      {/* Menu Trigger */}
       <button 
         onClick={toggleMenu}
         className={`

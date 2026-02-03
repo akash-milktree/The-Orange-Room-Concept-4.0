@@ -26,7 +26,16 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block">
-      <div className="grid grid-cols-6 h-full">
+      <div className="grid grid-cols-[240px_repeat(6,1fr)] h-full">
+        {/* Brand Logo Box - Positioned between Sidebar trigger and Home */}
+        <div className="flex items-center justify-center block-border px-6 transition-colors hover:bg-white/5 cursor-default group">
+          <img 
+            src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/orange-logo-1.png" 
+            alt="Orange Rooms Logo" 
+            className="h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
         {menuItems.map((item, idx) => {
           const isActive = activeDropdown === item.label;
           

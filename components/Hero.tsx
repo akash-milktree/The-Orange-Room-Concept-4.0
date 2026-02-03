@@ -21,11 +21,11 @@ const Hero: React.FC = () => {
           
           <div className="space-y-4 md:space-y-6">
             <h2 className="text-[24px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold tracking-tight text-white/95 leading-tight">
-              Your neighborhood bar
+              Southampton's legendary sanctuary
             </h2>
             
-            <p className="text-[14px] lg:text-[16px] text-white/70 leading-[1.6] lg:leading-[1.8] font-light max-w-[440px]">
-              You know that feeling you get when you're high on life? That very same feeling that used to occur when you had birthdays as a child? When you are madly in love? That very feeling was blasting through the windows of this very place like ray of fuckin' sunshine, the 3rd of March 2019.
+            <p className="text-[14px] lg:text-[16px] text-white/70 leading-[1.6] lg:leading-[1.8] font-light max-w-[480px]">
+              Celebrating 23 incredible years of magic! Step into our retro-inspired wonderland—from tropical Tiki escapes and après-ski beats in Off Piste to first-class luxury at Mile High. Whether for a masterclass or a late-night groove, we are the city’s destination to Meet, Drink, and Lounge until 3am.
             </p>
           </div>
         </div>
