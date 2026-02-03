@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-24 right-0 z-50 h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border">
+    <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block">
       <div className="grid grid-cols-6 h-full">
         {menuItems.map((item, idx) => {
           const isActive = activeDropdown === item.label;
