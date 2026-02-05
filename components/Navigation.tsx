@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { View } from '../App.tsx';
 
 interface NavigationProps {
-  onNavigate?: (view: 'home' | 'tables') => void;
+  onNavigate?: (view: View) => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
@@ -17,11 +18,11 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
       hasSubmenu: true, 
       submenu: [
         { label: 'OUR TABLES', view: 'tables' as const },
-        { label: 'TIKI', view: 'home' as const },
-        { label: 'OFF PISTE', view: 'home' as const },
-        { label: 'FULL VENUE', view: 'home' as const },
-        { label: 'HALF VENUE', view: 'home' as const },
-        { label: 'MILE HIGH', view: 'home' as const }
+        { label: 'TIKI', view: 'tiki' as const },
+        { label: 'OFF PISTE', view: 'off-piste' as const },
+        { label: 'FULL VENUE', view: 'full-venue' as const },
+        { label: 'HALF VENUE', view: 'half-venue' as const },
+        { label: 'MILE HIGH', view: 'mile-high' as const }
       ] 
     },
     { 
@@ -37,16 +38,14 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
         { label: 'NEON JUNGLE', view: 'home' as const }
       ] 
     },
-    { label: 'PRIVATE HIRE', href: '#', view: 'home' as const },
-    { label: 'CORPORATE HIRE', href: '#', view: 'home' as const },
+    { label: 'PRIVATE HIRE', href: '#', view: 'full-venue' as const },
+    { label: 'CORPORATE HIRE', href: '#', view: 'full-venue' as const },
     { label: 'BOOK', href: '#dmn-booking-container', isSpecial: true },
   ];
 
-  const handleClick = (view?: 'home' | 'tables') => {
+  const handleClick = (view?: View) => {
     if (view && onNavigate) {
       onNavigate(view);
-      if (view === 'home') window.location.hash = '';
-      if (view === 'tables') window.location.hash = 'tables';
     }
   };
 

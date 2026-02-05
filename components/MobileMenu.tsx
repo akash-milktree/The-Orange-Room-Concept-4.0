@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { X, ChevronRight } from 'lucide-react';
+import { View } from '../App.tsx';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  onNavigate?: (view: 'home' | 'tables') => void;
+  onNavigate?: (view: View) => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) => {
@@ -15,11 +16,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
       label: 'VENUES', 
       submenu: [
         { label: 'OUR TABLES', view: 'tables' as const }, 
-        { label: 'TIKI', view: 'home' as const }, 
-        { label: 'OFF PISTE', view: 'home' as const }, 
-        { label: 'FULL VENUE', view: 'home' as const }, 
-        { label: 'HALF VENUE', view: 'home' as const }, 
-        { label: 'MILE HIGH', view: 'home' as const }
+        { label: 'TIKI', view: 'tiki' as const }, 
+        { label: 'OFF PISTE', view: 'off-piste' as const }, 
+        { label: 'FULL VENUE', view: 'full-venue' as const }, 
+        { label: 'HALF VENUE', view: 'half-venue' as const }, 
+        { label: 'MILE HIGH', view: 'mile-high' as const }
       ] 
     },
     { 
@@ -33,12 +34,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
         { label: 'NEON JUNGLE', view: 'home' as const }
       ] 
     },
-    { label: 'PRIVATE HIRE', view: 'home' as const },
-    { label: 'CORPORATE HIRE', view: 'home' as const },
+    { label: 'PRIVATE HIRE', view: 'full-venue' as const },
+    { label: 'CORPORATE HIRE', view: 'full-venue' as const },
     { label: 'BOOK NOW', href: '#dmn-booking-container', isSpecial: true },
   ];
 
-  const handleLinkClick = (view?: 'home' | 'tables') => {
+  const handleLinkClick = (view?: View) => {
     if (view && onNavigate) {
       onNavigate(view);
       onClose();
@@ -100,15 +101,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
               )}
             </div>
           ))}
-        </div>
-        
-        {/* Footer social in mobile menu */}
-        <div className="mt-auto pt-10 border-t border-white/10 flex items-center justify-between">
-          <span className="text-[10px] font-black tracking-[0.2em] text-white/20 uppercase">ORANGE ROOMS EST. 2001</span>
-          <div className="flex space-x-6">
-            <div className="w-2 h-2 rounded-full bg-[#F29100]"></div>
-            <div className="w-2 h-2 rounded-full bg-white/20"></div>
-          </div>
         </div>
       </div>
     </div>

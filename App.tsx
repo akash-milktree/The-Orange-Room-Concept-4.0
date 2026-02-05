@@ -14,24 +14,36 @@ import Footer from './components/Footer.tsx';
 import MobileMenu from './components/MobileMenu.tsx';
 import MobileHeader from './components/MobileHeader.tsx';
 import OurTablesPage from './pages/OurTablesPage.tsx';
+import TikiPage from './pages/TikiPage.tsx';
+import FullVenuePage from './pages/FullVenuePage.tsx';
+import HalfVenuePage from './pages/HalfVenuePage.tsx';
+import OffPistePage from './pages/OffPistePage.tsx';
+import MileHighPage from './pages/MileHighPage.tsx';
+
+export type View = 'home' | 'tables' | 'tiki' | 'full-venue' | 'half-venue' | 'off-piste' | 'mile-high';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<'home' | 'tables'>('home');
+  const [currentView, setCurrentView] = useState<View>('home');
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  const navigateTo = (view: 'home' | 'tables') => {
+  const navigateTo = (view: View) => {
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMenuOpen(false);
+    
+    // Update hash for basic history support
+    if (view === 'home') window.location.hash = '';
+    else window.location.hash = view;
   };
 
-  // Listen for hash changes or simple state navigation
+  // Listen for hash changes
   useEffect(() => {
     const handlePopState = () => {
-      if (window.location.hash === '#tables') {
-        setCurrentView('tables');
+      const hash = window.location.hash.replace('#', '');
+      if (['tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 'mile-high'].includes(hash)) {
+        setCurrentView(hash as View);
       } else {
         setCurrentView('home');
       }
@@ -50,7 +62,7 @@ const App: React.FC = () => {
       
       {/* Main container */}
       <main className="ml-0 lg:ml-24 pt-20 lg:pt-24 w-full">
-        {currentView === 'home' ? (
+        {currentView === 'home' && (
           <>
             <Hero />
             <OfferingsSection />
@@ -61,9 +73,13 @@ const App: React.FC = () => {
             <ReviewsSection />
             <VenuesTabsSection />
           </>
-        ) : (
-          <OurTablesPage />
         )}
+        {currentView === 'tables' && <OurTablesPage />}
+        {currentView === 'tiki' && <TikiPage />}
+        {currentView === 'full-venue' && <FullVenuePage />}
+        {currentView === 'half-venue' && <HalfVenuePage />}
+        {currentView === 'off-piste' && <OffPistePage />}
+        {currentView === 'mile-high' && <MileHighPage />}
         <Footer />
       </main>
     </div>
