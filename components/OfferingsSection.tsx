@@ -50,9 +50,9 @@ const OfferingsSection: React.FC = () => {
   return (
     <section className="bg-[#1a1919] flex flex-col">
       {/* Section Header Bar */}
-      <div className="h-20 lg:h-24 nav-border grid grid-cols-2 lg:grid-cols-6 box-border">
-        <div className="flex items-center justify-center lg:block-border h-full px-4">
-          <span className="text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-black text-white text-center">THE LINEUP</span>
+      <div className="h-20 lg:h-24 nav-border grid grid-cols-2 lg:grid-cols-6 box-border bg-[#1a1919]">
+        <div className="flex items-center justify-center lg:block-border h-full px-4 border-r-2 border-white/30">
+          <span className="text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-black text-[#F29100]">THE LINEUP</span>
         </div>
         <div className="hidden lg:block lg:col-span-5 h-full opacity-0" />
       </div>
@@ -63,32 +63,34 @@ const OfferingsSection: React.FC = () => {
           <div 
             key={idx} 
             className={`
-              relative overflow-hidden group transition-all duration-500 cursor-pointer border-b-2 border-white/40 min-h-[320px] lg:min-h-[400px]
-              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/40' : ''} 
-              ${idx % 2 === 0 ? 'md:border-r-2 md:border-white/40 lg:border-r-auto' : ''}
+              relative overflow-hidden group transition-all duration-500 cursor-pointer border-b-2 border-white/30 min-h-[350px] lg:min-h-[450px]
+              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/30' : ''} 
+              ${idx % 2 === 0 ? 'md:border-r-2 md:border-white/30 lg:border-r-auto' : ''}
             `}
           >
+            {/* Image Layer: Now partially visible by default for better visual feedback */}
             <div 
-              className="absolute top-0 left-0 w-full h-full z-0 opacity-0 lg:opacity-0 group-hover:opacity-70 transition-all duration-700 bg-cover bg-center scale-110 group-hover:scale-100"
+              className="absolute inset-0 z-0 opacity-40 md:opacity-30 lg:opacity-40 group-hover:opacity-80 transition-all duration-700 bg-cover bg-center grayscale-[0.3] group-hover:grayscale-0 scale-105 group-hover:scale-100"
               style={{ backgroundImage: `url(${item.bgImage})` }}
             />
-            {/* On mobile always show a bit of background or overlay for depth */}
-            <div className="absolute top-0 left-0 w-full h-full z-[1] bg-black/60 md:bg-black/40 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1a1919] via-[#1a1919]/40 to-black/80 lg:opacity-100 group-hover:opacity-40 transition-opacity duration-700" />
             
             <div className="relative z-10 flex flex-col h-full space-y-4 md:space-y-6 p-8 lg:p-14">
               <div className="space-y-2 md:space-y-3">
-                <h3 className="text-[24px] md:text-[30px] font-bold tracking-tight text-white leading-tight transition-colors duration-300 group-hover:text-[#F29100]">
+                <h3 className="text-[24px] md:text-[32px] font-bold tracking-tight text-white leading-tight group-hover:text-[#F29100] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black text-[#F29100]">
+                <p className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] font-black text-[#F29100]">
                   {item.label}
                 </p>
               </div>
-              <p className="text-[13px] md:text-[14.5px] text-white/70 group-hover:text-white leading-relaxed font-light transition-colors duration-300">
+              <p className="text-[14px] md:text-[15.5px] text-white/80 group-hover:text-white leading-relaxed font-light transition-colors max-w-[320px]">
                 {item.content}
               </p>
               <div className="pt-2 md:pt-4 mt-auto">
-                <span className="inline-block text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-white/40 group-hover:text-white transition-all border-b border-white/20 group-hover:border-[#F29100] pb-1">
+                <span className="inline-block text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-bold text-white group-hover:text-[#F29100] transition-all border-b-2 border-[#F29100] pb-2">
                   {item.cta}
                 </span>
               </div>

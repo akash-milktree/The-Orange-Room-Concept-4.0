@@ -2,21 +2,18 @@
 import React from 'react';
 
 const MarqueeSection: React.FC = () => {
-  const text = "When you don't mind the rain, have pancakes in bed or champagne on a Monday? ♦ When you don't mind the rain, have pancakes in bed or champagne on a Monday? ♦ ";
+  const text = "UNFORGETTABLE EXPERIENCES ♦ SHAKE UP YOUR MIXOLOGY ♦ LEGENDARY PARTY BRUNCHES ♦ GROOVE TO THE BEATS ♦ RETRO-INSPIRED WONDERLAND ♦ ";
   
   return (
-    <section className="bg-[#F29100] h-24 flex items-center overflow-hidden border-b-2 border-white/50 relative z-20">
+    <section className="bg-white h-24 flex items-center overflow-hidden border-y-2 border-white/50 relative z-20">
       <div className="flex whitespace-nowrap animate-marquee">
-        <span className="text-[32px] lg:text-[40px] font-serif italic font-semibold text-white tracking-tight px-4">
+        <span className="text-[28px] lg:text-[34px] font-serif italic font-bold text-[#F29100] tracking-tight px-4 uppercase">
           {text}
         </span>
-        <span className="text-[32px] lg:text-[40px] font-serif italic font-semibold text-white tracking-tight px-4">
+        <span className="text-[28px] lg:text-[34px] font-serif italic font-bold text-[#F29100] tracking-tight px-4 uppercase">
           {text}
         </span>
-        <span className="text-[32px] lg:text-[40px] font-serif italic font-semibold text-white tracking-tight px-4">
-          {text}
-        </span>
-        <span className="text-[32px] lg:text-[40px] font-serif italic font-semibold text-white tracking-tight px-4">
+        <span className="text-[28px] lg:text-[34px] font-serif italic font-bold text-[#F29100] tracking-tight px-4 uppercase">
           {text}
         </span>
       </div>

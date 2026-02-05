@@ -1,43 +1,78 @@
 
 import React from 'react';
-import { X } from 'lucide-react';
+import { X, ChevronRight } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onNavigate?: (view: 'home' | 'tables') => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) => {
   const menuItems = [
-    { label: 'HOME', href: '#' },
-    { label: 'VENUES', href: '#', submenu: ['OUR TABLES', 'TIKI', 'OFF PISTE', 'FULL VENUE', 'HALF VENUE', 'MILE HIGH'] },
-    { label: 'LINEUP', href: '#', submenu: ['COCKTAIL BAR', 'BOTTOMLESS BRUNCHES', 'PRIVATE HIRE', 'CORPORATE HIRE', 'VIP BOOKINGS', 'NEON JUNGLE'] },
-    { label: 'PRIVATE HIRE', href: '#' },
-    { label: 'CORPORATE HIRE', href: '#' },
-    { label: 'BOOK NOW', href: '#', isSpecial: true },
+    { label: 'HOME', view: 'home' as const },
+    { 
+      label: 'VENUES', 
+      submenu: [
+        { label: 'OUR TABLES', view: 'tables' as const }, 
+        { label: 'TIKI', view: 'home' as const }, 
+        { label: 'OFF PISTE', view: 'home' as const }, 
+        { label: 'FULL VENUE', view: 'home' as const }, 
+        { label: 'HALF VENUE', view: 'home' as const }, 
+        { label: 'MILE HIGH', view: 'home' as const }
+      ] 
+    },
+    { 
+      label: 'LINEUP', 
+      submenu: [
+        { label: 'COCKTAIL BAR', view: 'home' as const }, 
+        { label: 'BOTTOMLESS BRUNCHES', view: 'home' as const }, 
+        { label: 'PRIVATE HIRE', view: 'home' as const }, 
+        { label: 'CORPORATE HIRE', view: 'home' as const }, 
+        { label: 'VIP BOOKINGS', view: 'home' as const }, 
+        { label: 'NEON JUNGLE', view: 'home' as const }
+      ] 
+    },
+    { label: 'PRIVATE HIRE', view: 'home' as const },
+    { label: 'CORPORATE HIRE', view: 'home' as const },
+    { label: 'BOOK NOW', href: '#dmn-booking-container', isSpecial: true },
   ];
+
+  const handleLinkClick = (view?: 'home' | 'tables') => {
+    if (view && onNavigate) {
+      onNavigate(view);
+      onClose();
+    }
+  };
 
   return (
     <div className={`
-      fixed inset-0 z-[90] bg-[#1a1919] transition-transform duration-500 ease-in-out lg:hidden
+      fixed inset-0 z-[150] bg-[#1a1919] transition-transform duration-500 ease-in-out lg:hidden
       ${isOpen ? 'translate-x-0' : '-translate-x-full'}
     `}>
-      {/* Close Button - Top Right */}
       <button 
         onClick={onClose}
-        className="absolute top-5 right-5 p-4 text-white hover:text-[#F29100] transition-colors z-[110]"
+        className="absolute top-5 right-5 p-4 text-white hover:text-[#F29100] transition-colors z-[160]"
         aria-label="Close menu"
       >
         <X className="w-10 h-10" />
       </button>
 
       <div className="h-full flex flex-col p-8 pt-28 overflow-y-auto">
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-8 pb-20">
           {menuItems.map((item) => (
             <div key={item.label} className="flex flex-col space-y-4">
               <a 
-                href={item.href}
-                onClick={onClose}
+                href={item.href || '#'}
+                onClick={(e) => {
+                  if (item.view) {
+                    e.preventDefault();
+                    handleLinkClick(item.view);
+                  }
+                  if (item.href?.startsWith('#')) {
+                    onClose();
+                  }
+                }}
                 className={`
                   text-[32px] md:text-[48px] font-black uppercase tracking-tighter leading-none transition-colors
                   ${item.isSpecial ? 'text-[#F29100]' : 'text-white hover:text-[#F29100]'}
@@ -46,15 +81,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 {item.label}
               </a>
               {item.submenu && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 pl-2">
-                  {item.submenu.map((sub) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pl-4 border-l-2 border-white/10">
+                  {item.submenu.map((sub: any) => (
                     <a 
-                      key={sub} 
-                      href="#" 
-                      onClick={onClose}
-                      className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors"
+                      key={sub.label} 
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLinkClick(sub.view);
+                      }}
+                      className="text-[14px] font-bold text-white/50 hover:text-[#F29100] uppercase tracking-widest flex items-center gap-2 group"
                     >
-                      {sub}
+                      <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      {sub.label}
                     </a>
                   ))}
                 </div>
@@ -62,11 +101,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </div>
           ))}
         </div>
-
-        <div className="mt-16 pt-12 border-t-2 border-white/10 pb-12">
-          <p className="text-[#F29100] font-black text-[12px] uppercase tracking-widest mb-4">Contact us</p>
-          <a href="tel:02380232333" className="text-white text-[20px] font-bold block mb-2">023 8023 2333</a>
-          <a href="mailto:info@orangerooms.co.uk" className="text-white/60 text-[14px] hover:text-white underline underline-offset-4">info@orangerooms.co.uk</a>
+        
+        {/* Footer social in mobile menu */}
+        <div className="mt-auto pt-10 border-t border-white/10 flex items-center justify-between">
+          <span className="text-[10px] font-black tracking-[0.2em] text-white/20 uppercase">ORANGE ROOMS EST. 2001</span>
+          <div className="flex space-x-6">
+            <div className="w-2 h-2 rounded-full bg-[#F29100]"></div>
+            <div className="w-2 h-2 rounded-full bg-white/20"></div>
+          </div>
         </div>
       </div>
     </div>
