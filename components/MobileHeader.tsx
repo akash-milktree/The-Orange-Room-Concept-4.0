@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Martini, X, CalendarDays } from 'lucide-react';
+import { Menu, X, CalendarDays } from 'lucide-react';
 
 interface MobileHeaderProps {
   toggleMenu: () => void;
@@ -9,7 +9,7 @@ interface MobileHeaderProps {
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 h-20 bg-[#1a1919] z-[100] border-b-2 border-white/30 flex items-center lg:hidden shadow-xl">
+    <header className="fixed top-0 left-0 right-0 h-20 bg-[#1a1919] z-[100] border-b-2 border-white/50 flex items-center lg:hidden shadow-xl">
       {/* Brand Logo Area */}
       <div className="flex-1 px-4 flex items-center gap-3">
         <img 
@@ -41,9 +41,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen }) =
           {isMenuOpen ? (
             <X className="w-8 h-8" />
           ) : (
-            <div className="animate-spin-3d">
-              <Martini className="w-8 h-8" />
-            </div>
+            <Menu className="w-8 h-8" />
           )}
         </button>
       </div>

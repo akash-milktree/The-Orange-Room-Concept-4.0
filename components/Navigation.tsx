@@ -30,7 +30,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
       href: '#', 
       hasSubmenu: true, 
       submenu: [
-        { label: 'COCKTAIL BAR', view: 'home' as const },
+        { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const },
         { label: 'BOTTOMLESS BRUNCHES', view: 'home' as const },
         { label: 'PRIVATE HIRE', view: 'home' as const },
         { label: 'CORPORATE HIRE', view: 'home' as const },
@@ -50,17 +50,17 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block">
+    <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block overflow-hidden">
       <div className="grid grid-cols-[240px_repeat(6,1fr)] h-full">
-        {/* Brand Logo Box */}
+        {/* Brand Logo Box - Perfectly aligned vertical and horizontal */}
         <div 
           onClick={() => handleClick('home')}
-          className="flex items-center justify-center block-border px-6 transition-colors hover:bg-white/5 cursor-pointer group"
+          className="flex items-center justify-center block-border px-6 transition-colors hover:bg-white/5 cursor-pointer group h-full box-border"
         >
           <img 
             src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/orange-logo-1.png" 
             alt="Orange Rooms Logo" 
-            className="h-16 lg:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+            className="h-14 lg:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
           />
         </div>
 
@@ -70,7 +70,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
           return (
             <div 
               key={item.label}
-              className={`relative group ${idx < 5 ? 'block-border' : ''}`}
+              className={`relative group h-full ${idx < 5 ? 'block-border' : ''}`}
               onMouseEnter={() => item.hasSubmenu && setActiveDropdown(item.label)}
               onMouseLeave={() => item.hasSubmenu && setActiveDropdown(null)}
             >
@@ -83,7 +83,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
                   }
                 }}
                 className={`
-                  flex items-center justify-center h-full w-full transition-all duration-300 uppercase tracking-[0.3em] text-[10px] font-black
+                  flex items-center justify-center h-full w-full transition-all duration-300 uppercase tracking-[0.3em] text-[10px] font-black box-border
                   ${item.isSpecial 
                     ? 'bg-[#F29100] text-white hover:bg-white hover:text-[#F29100]' 
                     : (isActive ? 'bg-[#F29100] text-white' : 'text-white hover:bg-[#F29100] hover:text-white')

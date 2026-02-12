@@ -20,7 +20,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
   ];
 
   const lineupSubmenu = [
-    { label: 'Cocktail Bar', view: 'home' as const },
+    { label: 'Cocktail Bar', view: 'cocktail-bar' as const },
     { label: 'Bottomless Brunches', view: 'home' as const },
     { label: 'Private Hire', view: 'full-venue' as const },
     { label: 'Corporate Hire', view: 'full-venue' as const },

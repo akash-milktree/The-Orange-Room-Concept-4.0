@@ -19,8 +19,9 @@ import FullVenuePage from './pages/FullVenuePage.tsx';
 import HalfVenuePage from './pages/HalfVenuePage.tsx';
 import OffPistePage from './pages/OffPistePage.tsx';
 import MileHighPage from './pages/MileHighPage.tsx';
+import CocktailBarPage from './pages/CocktailBarPage.tsx';
 
-export type View = 'home' | 'tables' | 'tiki' | 'full-venue' | 'half-venue' | 'off-piste' | 'mile-high';
+export type View = 'home' | 'tables' | 'tiki' | 'full-venue' | 'half-venue' | 'off-piste' | 'mile-high' | 'cocktail-bar';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +43,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const handlePopState = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 'mile-high'].includes(hash)) {
+      const validViews: View[] = ['tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 'mile-high', 'cocktail-bar'];
+      if (validViews.includes(hash as View)) {
         setCurrentView(hash as View);
       } else {
         setCurrentView('home');
@@ -80,6 +82,7 @@ const App: React.FC = () => {
         {currentView === 'half-venue' && <HalfVenuePage />}
         {currentView === 'off-piste' && <OffPistePage />}
         {currentView === 'mile-high' && <MileHighPage />}
+        {currentView === 'cocktail-bar' && <CocktailBarPage />}
         <Footer />
       </main>
     </div>
