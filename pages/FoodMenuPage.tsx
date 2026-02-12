@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import BookingSection from '../components/BookingSection.tsx';
-import { Utensils, Zap, Heart, Sparkles, Star, ChevronLeft, ChevronRight, Maximize2, X, Info, Download, Clock, Cookie, Cheese } from 'lucide-react';
+import { Utensils, Zap, Heart, Sparkles, Star, ChevronLeft, ChevronRight, Maximize2, X, Info, Download, Clock, Cookie } from 'lucide-react';
 
 const FoodMenuPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -99,7 +99,7 @@ const FoodMenuPage: React.FC = () => {
                         <p className="text-[14px] font-medium opacity-70">Flowing chocolate, marshmallows, and sweet treats.</p>
                      </div>
                      <div className="p-8 border-2 border-[#1a1919] flex flex-col gap-4 group hover:bg-[#1a1919] hover:text-white transition-all">
-                        <Cheese className="w-10 h-10 text-[#F29100]" />
+                        <Utensils className="w-10 h-10 text-[#F29100]" />
                         <h4 className="text-[18px] font-black uppercase">SAVOURY</h4>
                         <p className="text-[14px] font-medium opacity-70">Gooey melted cheese, cured meats, and savoury bites.</p>
                      </div>

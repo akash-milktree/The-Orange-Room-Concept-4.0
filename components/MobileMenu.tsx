@@ -30,6 +30,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
     { label: 'Food Menu', view: 'food-menu' as const }
   ];
 
+  const bookingsSubmenu = [
+    { label: 'Private Hire', view: 'private-hire' as const },
+    { label: 'Corporate Hire', view: 'corporate-hire' as const },
+    { label: 'VIP Bookings', view: 'vip-bookings' as const }
+  ];
+
   const handleLinkClick = (view?: View) => {
     if (view && onNavigate) {
       onNavigate(view);
@@ -51,15 +57,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
         <div className="flex-1 flex flex-col justify-center px-8 sm:px-20 lg:px-28 overflow-y-auto py-24 scrollbar-hide">
           <div className="flex flex-col space-y-2 md:space-y-4 lg:space-y-6">
             
-            {/* HOME */}
-            <div className={`transition-all duration-700 delay-75 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
-                Home
-              </a>
-            </div>
-
             {/* MENUS + Horizontal Submenu */}
-            <div className={`transition-all duration-700 delay-100 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className={`transition-all duration-700 delay-75 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
                 <span className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] leading-tight">
                   Menu
@@ -82,8 +81,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
                   {venuesSubmenu.map((sub) => (
-                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[10px] md:text-[11px] font-sans font-black uppercase tracking-[0.2em] text-white/40 hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
-                      <ChevronRight className="w-2.5 h-2.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
+                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[12px] md:text-[14px] font-sans font-black uppercase tracking-[0.2em] text-white hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
                     </button>
                   ))}
                 </div>
@@ -98,39 +97,34 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
                   {lineupSubmenu.map((sub) => (
-                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[10px] md:text-[11px] font-sans font-black uppercase tracking-[0.2em] text-white/40 hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
-                      <ChevronRight className="w-2.5 h-2.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
+                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[12px] md:text-[14px] font-sans font-black uppercase tracking-[0.2em] text-white hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
                     </button>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* PRIVATE HIRE */}
+            {/* BOOKINGS + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-300 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('private-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
-                Private Hire
-              </a>
-            </div>
-
-            {/* CORPORATE HIRE */}
-            <div className={`transition-all duration-700 delay-375 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('corporate-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
-                Corporate Hire
-              </a>
-            </div>
-
-            {/* VIP BOOKINGS */}
-            <div className={`transition-all duration-700 delay-425 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('vip-bookings'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
-                VIP Bookings
-              </a>
+              <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
+                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('private-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+                  Bookings
+                </a>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
+                  {bookingsSubmenu.map((sub) => (
+                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[12px] md:text-[14px] font-sans font-black uppercase tracking-[0.2em] text-white hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* BOOK */}
-            <div className={`transition-all duration-700 delay-450 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className={`transition-all duration-700 delay-375 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <a href="#dmn-booking-container" onClick={onClose} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] hover:text-white leading-tight transition-all">
-                Book Now
+                Reserve a Table
               </a>
             </div>
 

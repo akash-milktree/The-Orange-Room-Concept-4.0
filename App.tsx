@@ -86,7 +86,7 @@ const App: React.FC = () => {
       <Navigation onNavigate={navigateTo} />
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onNavigate={navigateTo} />
       
-      <main className="ml-0 lg:ml-24 pt-20 lg:pt-24 w-full">
+      <main className="ml-0 lg:ml-24 pt-20 lg:pt-24">
         {currentView === 'home' && (
           <>
             <Hero />
