@@ -11,7 +11,6 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const menuItems = [
-    { label: 'HOME', href: '#', view: 'home' as const },
     { 
       label: 'VENUES', 
       href: '#', 
@@ -31,15 +30,13 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
       hasSubmenu: true, 
       submenu: [
         { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const },
-        { label: 'BOTTOMLESS BRUNCHES', view: 'home' as const },
-        { label: 'PRIVATE HIRE', view: 'home' as const },
-        { label: 'CORPORATE HIRE', view: 'home' as const },
-        { label: 'VIP BOOKINGS', view: 'home' as const },
-        { label: 'NEON JUNGLE', view: 'home' as const }
+        { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const },
+        { label: 'NEON JUNGLE', view: 'neon-jungle' as const }
       ] 
     },
-    { label: 'PRIVATE HIRE', href: '#', view: 'full-venue' as const },
-    { label: 'CORPORATE HIRE', href: '#', view: 'full-venue' as const },
+    { label: 'PRIVATE HIRE', href: '#', view: 'private-hire' as const },
+    { label: 'CORPORATE HIRE', href: '#', view: 'corporate-hire' as const },
+    { label: 'VIP BOOKINGS', href: '#', view: 'vip-bookings' as const },
     { label: 'BOOK', href: '#dmn-booking-container', isSpecial: true },
   ];
 
@@ -50,9 +47,8 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block overflow-hidden">
+    <nav className="fixed top-0 left-20 lg:left-24 right-0 z-50 h-20 lg:h-24 nav-border bg-[#1a1919]/95 backdrop-blur-md box-border hidden lg:block">
       <div className="grid grid-cols-[240px_repeat(6,1fr)] h-full">
-        {/* Brand Logo Box - Perfectly aligned vertical and horizontal */}
         <div 
           onClick={() => handleClick('home')}
           className="flex items-center justify-center block-border px-6 transition-colors hover:bg-white/5 cursor-pointer group h-full box-border"
@@ -93,9 +89,9 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
                 <span className="flex items-center gap-1.5">
                   {item.label}
                   {item.hasSubmenu && (
-                    isActive 
-                      ? <ChevronUp className="w-3.5 h-3.5 text-white" />
-                      : <ChevronDown className="w-3.5 h-3.5 opacity-50 group-hover:text-white transition-opacity" />
+                    <div className={`transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`}>
+                      <ChevronDown className="w-3.5 h-3.5" />
+                    </div>
                   )}
                 </span>
               </a>
@@ -103,7 +99,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
               {item.hasSubmenu && (
                 <div className={`
                   absolute top-full left-[-2px] right-[-2px] bg-[#1a1919] border-x-2 border-b-2 border-white/50 
-                  transition-all duration-300 origin-top shadow-2xl overflow-hidden z-[70]
+                  transition-all duration-300 origin-top shadow-2xl z-[70]
                   ${isActive ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-95 invisible'}
                 `}>
                   <div className="flex flex-col">

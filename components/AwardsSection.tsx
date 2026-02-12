@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Award, ShieldCheck, Zap } from 'lucide-react';
 
@@ -31,7 +30,8 @@ const AwardsSection: React.FC = () => {
             <span className="text-[#F29100]">BOTTLES</span>
           </h2>
           <div className="text-[#F29100] mt-2 sm:mt-4 mr-0 sm:mr-12 lg:mr-20">
-            <svg width="40" height="40" sm:width="60" sm:height="60" viewBox="0 0 100 100" fill="currentColor">
+            {/* Fix: SVG does not support sm:width/height props. Using Tailwind classes instead. */}
+            <svg viewBox="0 0 100 100" fill="currentColor" className="w-10 h-10 sm:w-[60px] sm:h-[60px]">
               <path d="M50 0C52.7614 0 55 2.23858 55 5C55 18.2548 65.7452 29 79 29C81.7614 29 84 31.2386 84 34C84 36.7614 81.7614 39 79 39C65.7452 39 55 49.7452 55 63C55 65.7614 52.7614 68 50 68C47.2386 68 45 65.7614 45 63C45 49.7452 34.2548 39 21 39C18.2386 39 16 36.7614 16 34C16 31.2386 18.2386 29 21 29C34.2548 29 45 18.2548 45 5C45 2.23858 47.2386 0 50 0Z" />
               <circle cx="50" cy="85" r="8" />
             </svg>

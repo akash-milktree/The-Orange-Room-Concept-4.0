@@ -20,8 +20,30 @@ import HalfVenuePage from './pages/HalfVenuePage.tsx';
 import OffPistePage from './pages/OffPistePage.tsx';
 import MileHighPage from './pages/MileHighPage.tsx';
 import CocktailBarPage from './pages/CocktailBarPage.tsx';
+import BrunchesPage from './pages/BrunchesPage.tsx';
+import PrivateHirePage from './pages/PrivateHirePage.tsx';
+import CorporateHirePage from './pages/CorporateHirePage.tsx';
+import VipBookingsPage from './pages/VipBookingsPage.tsx';
+import NeonJunglePage from './pages/NeonJunglePage.tsx';
+import DrinksMenuPage from './pages/DrinksMenuPage.tsx';
+import FoodMenuPage from './pages/FoodMenuPage.tsx';
 
-export type View = 'home' | 'tables' | 'tiki' | 'full-venue' | 'half-venue' | 'off-piste' | 'mile-high' | 'cocktail-bar';
+export type View = 
+  | 'home' 
+  | 'tables' 
+  | 'tiki' 
+  | 'full-venue' 
+  | 'half-venue' 
+  | 'off-piste' 
+  | 'mile-high' 
+  | 'cocktail-bar'
+  | 'brunches'
+  | 'private-hire'
+  | 'corporate-hire'
+  | 'vip-bookings'
+  | 'neon-jungle'
+  | 'drinks-menu'
+  | 'food-menu';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,16 +56,18 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMenuOpen(false);
     
-    // Update hash for basic history support
     if (view === 'home') window.location.hash = '';
     else window.location.hash = view;
   };
 
-  // Listen for hash changes
   useEffect(() => {
     const handlePopState = () => {
       const hash = window.location.hash.replace('#', '');
-      const validViews: View[] = ['tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 'mile-high', 'cocktail-bar'];
+      const validViews: View[] = [
+        'tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 
+        'mile-high', 'cocktail-bar', 'brunches', 'private-hire', 
+        'corporate-hire', 'vip-bookings', 'neon-jungle', 'drinks-menu', 'food-menu'
+      ];
       if (validViews.includes(hash as View)) {
         setCurrentView(hash as View);
       } else {
@@ -62,7 +86,6 @@ const App: React.FC = () => {
       <Navigation onNavigate={navigateTo} />
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onNavigate={navigateTo} />
       
-      {/* Main container */}
       <main className="ml-0 lg:ml-24 pt-20 lg:pt-24 w-full">
         {currentView === 'home' && (
           <>
@@ -83,6 +106,13 @@ const App: React.FC = () => {
         {currentView === 'off-piste' && <OffPistePage />}
         {currentView === 'mile-high' && <MileHighPage />}
         {currentView === 'cocktail-bar' && <CocktailBarPage />}
+        {currentView === 'brunches' && <BrunchesPage />}
+        {currentView === 'private-hire' && <PrivateHirePage />}
+        {currentView === 'corporate-hire' && <CorporateHirePage />}
+        {currentView === 'vip-bookings' && <VipBookingsPage />}
+        {currentView === 'neon-jungle' && <NeonJunglePage />}
+        {currentView === 'drinks-menu' && <DrinksMenuPage />}
+        {currentView === 'food-menu' && <FoodMenuPage />}
         <Footer />
       </main>
     </div>

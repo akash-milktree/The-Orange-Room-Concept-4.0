@@ -21,11 +21,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
 
   const lineupSubmenu = [
     { label: 'Cocktail Bar', view: 'cocktail-bar' as const },
-    { label: 'Bottomless Brunches', view: 'home' as const },
-    { label: 'Private Hire', view: 'full-venue' as const },
-    { label: 'Corporate Hire', view: 'full-venue' as const },
-    { label: 'VIP Bookings', view: 'home' as const },
-    { label: 'Neon Jungle', view: 'home' as const }
+    { label: 'Bottomless Brunches', view: 'brunches' as const },
+    { label: 'Neon Jungle', view: 'neon-jungle' as const }
+  ];
+
+  const menusSubmenu = [
+    { label: 'Drinks Menu', view: 'drinks-menu' as const },
+    { label: 'Food Menu', view: 'food-menu' as const }
   ];
 
   const handleLinkClick = (view?: View) => {
@@ -54,6 +56,22 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
               <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
                 Home
               </a>
+            </div>
+
+            {/* MENUS + Horizontal Submenu */}
+            <div className={`transition-all duration-700 delay-100 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
+                <span className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] leading-tight">
+                  Menu
+                </span>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 py-2">
+                  {menusSubmenu.map((sub) => (
+                    <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[12px] md:text-[14px] font-sans font-black uppercase tracking-[0.2em] text-white hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* VENUES + Horizontal Submenu */}
@@ -90,22 +108,29 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
 
             {/* PRIVATE HIRE */}
             <div className={`transition-all duration-700 delay-300 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('full-venue'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('private-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
                 Private Hire
               </a>
             </div>
 
             {/* CORPORATE HIRE */}
             <div className={`transition-all duration-700 delay-375 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('full-venue'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('corporate-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
                 Corporate Hire
+              </a>
+            </div>
+
+            {/* VIP BOOKINGS */}
+            <div className={`transition-all duration-700 delay-425 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('vip-bookings'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+                VIP Bookings
               </a>
             </div>
 
             {/* BOOK */}
             <div className={`transition-all duration-700 delay-450 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <a href="#dmn-booking-container" onClick={onClose} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] hover:text-white leading-tight transition-all">
-                Book
+                Book Now
               </a>
             </div>
 
