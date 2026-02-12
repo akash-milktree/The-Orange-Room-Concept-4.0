@@ -27,6 +27,7 @@ import VipBookingsPage from './pages/VipBookingsPage.tsx';
 import NeonJunglePage from './pages/NeonJunglePage.tsx';
 import DrinksMenuPage from './pages/DrinksMenuPage.tsx';
 import FoodMenuPage from './pages/FoodMenuPage.tsx';
+import BookPage from './pages/BookPage.tsx';
 
 export type View = 
   | 'home' 
@@ -43,7 +44,8 @@ export type View =
   | 'vip-bookings'
   | 'neon-jungle'
   | 'drinks-menu'
-  | 'food-menu';
+  | 'food-menu'
+  | 'book';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +68,7 @@ const App: React.FC = () => {
       const validViews: View[] = [
         'tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 
         'mile-high', 'cocktail-bar', 'brunches', 'private-hire', 
-        'corporate-hire', 'vip-bookings', 'neon-jungle', 'drinks-menu', 'food-menu'
+        'corporate-hire', 'vip-bookings', 'neon-jungle', 'drinks-menu', 'food-menu', 'book'
       ];
       if (validViews.includes(hash as View)) {
         setCurrentView(hash as View);
@@ -82,21 +84,21 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#1a1919] text-white selection:bg-orange-500 selection:text-white relative overflow-x-hidden">
       <Sidebar toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-      <MobileHeader toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <MobileHeader toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} onNavigate={navigateTo} />
       <Navigation onNavigate={navigateTo} />
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onNavigate={navigateTo} />
       
       <main className="ml-0 lg:ml-24 pt-20 lg:pt-24">
         {currentView === 'home' && (
           <>
-            <Hero />
-            <OfferingsSection />
+            <Hero onNavigate={navigateTo} />
+            <OfferingsSection onNavigate={navigateTo} />
             <MarqueeSection />
             <AwardsSection />
             <BookingSection />
             <LogoMarqueeSection />
             <ReviewsSection />
-            <VenuesTabsSection />
+            <VenuesTabsSection onNavigate={navigateTo} />
           </>
         )}
         {currentView === 'tables' && <OurTablesPage />}
@@ -113,7 +115,8 @@ const App: React.FC = () => {
         {currentView === 'neon-jungle' && <NeonJunglePage />}
         {currentView === 'drinks-menu' && <DrinksMenuPage />}
         {currentView === 'food-menu' && <FoodMenuPage />}
-        <Footer />
+        {currentView === 'book' && <BookPage />}
+        <Footer onNavigate={navigateTo} />
       </main>
     </div>
   );

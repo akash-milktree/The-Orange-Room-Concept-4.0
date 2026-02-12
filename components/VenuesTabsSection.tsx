@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { View } from '../App.tsx';
 
 interface Venue {
   id: string;
@@ -7,6 +8,10 @@ interface Venue {
   title: string;
   subtitle: string;
   image: string;
+}
+
+interface VenuesTabsSectionProps {
+  onNavigate?: (view: View) => void;
 }
 
 const venues: Venue[] = [
@@ -18,7 +23,7 @@ const venues: Venue[] = [
   { id: 'mile-high', name: 'Mile High', title: 'First Class', subtitle: 'Take your night to new heights in our aviation VIP lounge.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2025/07/smores3-1-1.png' }
 ];
 
-const VenuesTabsSection: React.FC = () => {
+const VenuesTabsSection: React.FC<VenuesTabsSectionProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState(venues[0]);
 
   return (
@@ -68,10 +73,10 @@ const VenuesTabsSection: React.FC = () => {
           </div>
 
           <div className="mt-8 md:mt-16 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-            <a href="#" className="w-full sm:w-64 md:w-72 py-4 md:py-6 bg-[#F29100] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:bg-white hover:text-[#1a1919] transition-all duration-300 shadow-xl">
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.(activeTab.id as View); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 bg-[#F29100] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:bg-white hover:text-[#1a1919] transition-all duration-300 shadow-xl cursor-pointer">
               View Details
             </a>
-            <a href="#" className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/40 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl">
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/40 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl cursor-pointer">
               Book Now
             </a>
           </div>

@@ -1,7 +1,21 @@
 
 import React from 'react';
+import { View } from '../App.tsx';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (view: View) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const quickLinks: { label: string; action: () => void }[] = [
+    { label: 'Private Party and Table Bookings', action: () => onNavigate?.('book') },
+    { label: 'Terms of Use', action: () => window.open('https://www.orangerooms.co.uk/terms-conditions/', '_blank') },
+    { label: 'Privacy Policy', action: () => window.open('https://www.orangerooms.co.uk/privacy-policy/', '_blank') },
+    { label: 'Cookie Policy', action: () => window.open('https://www.orangerooms.co.uk/cookie-policy/', '_blank') },
+    { label: 'Feedback', action: () => window.location.href = 'mailto:feedback@orangerooms.co.uk' },
+    { label: 'Jobs', action: () => window.location.href = 'mailto:jobs@orangerooms.co.uk' },
+    { label: 'Contact Us', action: () => window.location.href = 'mailto:info@orangerooms.co.uk' },
+  ];
   return (
     <footer className="bg-[#1a1919] border-t-2 border-white/50 flex flex-col relative">
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] lg:divide-x-2 lg:divide-white/50">
@@ -56,8 +70,8 @@ const Footer: React.FC = () => {
         <div className="p-8 md:p-12 lg:p-16 flex flex-col border-b-2 md:border-b-0 border-white/10 lg:border-b-0 min-w-0">
           <h3 className="text-[28px] md:text-[32px] font-bold tracking-tight text-white leading-none mb-8 md:mb-12">Quick Links</h3>
           <nav className="flex flex-col space-y-3 md:space-y-4">
-            {['Private Party and Table Bookings', 'Terms of Use', 'Privacy Policy', 'Cookie Policy', 'Feedback', 'Jobs', 'Contact Us'].map((link) => (
-              <a key={link} href="#" className="text-[11px] md:text-[13px] uppercase tracking-[0.2em] font-black text-white/40 hover:text-[#F29100] transition-colors">{link}</a>
+            {quickLinks.map((link) => (
+              <button key={link.label} onClick={link.action} className="text-[11px] md:text-[13px] uppercase tracking-[0.2em] font-black text-white/40 hover:text-[#F29100] transition-colors text-left cursor-pointer">{link.label}</button>
             ))}
           </nav>
         </div>

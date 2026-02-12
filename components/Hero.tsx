@@ -1,7 +1,12 @@
 
 import React from 'react';
+import { View } from '../App.tsx';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate?: (view: View) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] border-b-2 border-white/50 overflow-hidden bg-[#1a1919]">
       
@@ -30,8 +35,9 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a 
-                href="#dmn-booking-container" 
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }}
                 className="inline-flex items-center justify-center px-10 py-5 bg-[#F29100] text-white font-black text-[12px] tracking-[0.25em] uppercase hover:bg-white hover:text-[#1a1919] transition-all group shadow-2xl"
               >
                 Book A Table

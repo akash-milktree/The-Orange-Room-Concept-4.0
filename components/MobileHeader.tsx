@@ -1,13 +1,15 @@
 
 import React from 'react';
 import { Menu, X, CalendarDays } from 'lucide-react';
+import { View } from '../App.tsx';
 
 interface MobileHeaderProps {
   toggleMenu: () => void;
   isMenuOpen: boolean;
+  onNavigate?: (view: View) => void;
 }
 
-const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen }) => {
+const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen, onNavigate }) => {
   return (
     <header className="fixed top-0 left-0 right-0 h-20 bg-[#1a1919] z-[100] border-b-2 border-white/50 flex items-center lg:hidden shadow-xl">
       {/* Brand Logo Area */}
@@ -21,8 +23,9 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen }) =
 
       {/* Quick Actions */}
       <div className="flex h-full">
-        <a 
-          href="#dmn-booking-container"
+        <a
+          href="#"
+          onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }}
           className="h-full px-6 bg-[#F29100] flex items-center justify-center gap-2 border-l-2 border-white/20 transition-active"
         >
           <CalendarDays className="w-5 h-5 text-white" />

@@ -1,13 +1,19 @@
 
 import React from 'react';
+import { View } from '../App.tsx';
 
-const OfferingsSection: React.FC = () => {
+interface OfferingsSectionProps {
+  onNavigate?: (view: View) => void;
+}
+
+const OfferingsSection: React.FC<OfferingsSectionProps> = ({ onNavigate }) => {
   const offerings = [
     {
       title: "Cocktail Bar",
       label: "INNOVATIVE MIXOLOGY",
       content: "The heart of Southampton's nightlife. Discover our award-winning cocktail menu, crafted by master mixologists.",
       cta: "Explore Menu",
+      view: 'cocktail-bar' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Bottomless-Cocktails.jpg"
     },
     {
@@ -15,6 +21,7 @@ const OfferingsSection: React.FC = () => {
       label: "THE ULTIMATE DAYTIME PARTY",
       content: "Southampton's favorite weekend ritual. Enjoy two hours of unlimited drinks, incredible food, and high-energy vibes.",
       cta: "Join The Party",
+      view: 'brunches' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/smores3-1-1.png"
     },
     {
@@ -22,6 +29,7 @@ const OfferingsSection: React.FC = () => {
       label: "YOUR EXCLUSIVE EVENT",
       content: "From intimate birthday gatherings to grand wedding receptions, our versatile spaces offer the perfect backdrop.",
       cta: "Book Your Space",
+      view: 'private-hire' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/themed-brunches.jpg"
     },
     {
@@ -29,6 +37,7 @@ const OfferingsSection: React.FC = () => {
       label: "BUSINESS WITH A TWIST",
       content: "Ditch the boring boardroom. Host your next networking event, product launch, or team-building social.",
       cta: "Let's Talk Business",
+      view: 'corporate-hire' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Order-Drinks-to-table-pic.jpg"
     },
     {
@@ -36,6 +45,7 @@ const OfferingsSection: React.FC = () => {
       label: "THE LEGENDARY EXPERIENCE",
       content: "Secure an exclusive VIP booth with premium bottle service and a dedicated host. Party like a legend.",
       cta: "Go VIP",
+      view: 'vip-bookings' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Large-Cassette-Booth-Hero-image-1.png"
     },
     {
@@ -43,6 +53,7 @@ const OfferingsSection: React.FC = () => {
       label: "SUMMER IS COMING",
       content: "Step into our immersive tropical oasis. Think neon lights, exotic greenery, and frozen cocktails.",
       cta: "Step Inside",
+      view: 'neon-jungle' as View,
       bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2023/12/Garden-Tables-1.png"
     }
   ];
@@ -60,11 +71,12 @@ const OfferingsSection: React.FC = () => {
       {/* Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {offerings.map((item, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
+            onClick={() => onNavigate?.(item.view)}
             className={`
               relative overflow-hidden group transition-all duration-500 cursor-pointer border-b-2 border-white/30 min-h-[350px] lg:min-h-[450px]
-              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/30' : ''} 
+              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/30' : ''}
               ${idx % 2 === 0 ? 'md:border-r-2 md:border-white/30 lg:border-r-auto' : ''}
             `}
           >

@@ -37,7 +37,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
     { label: 'PRIVATE HIRE', href: '#', view: 'private-hire' as const },
     { label: 'CORPORATE HIRE', href: '#', view: 'corporate-hire' as const },
     { label: 'VIP BOOKINGS', href: '#', view: 'vip-bookings' as const },
-    { label: 'BOOK', href: '#dmn-booking-container', isSpecial: true },
+    { label: 'BOOK', href: '#', view: 'book' as const, isSpecial: true },
   ];
 
   const handleClick = (view?: View) => {

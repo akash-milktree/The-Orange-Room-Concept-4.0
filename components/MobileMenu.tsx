@@ -123,7 +123,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
 
             {/* BOOK */}
             <div className={`transition-all duration-700 delay-375 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#dmn-booking-container" onClick={onClose} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] hover:text-white leading-tight transition-all">
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('book'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] hover:text-white leading-tight transition-all">
                 Reserve a Table
               </a>
             </div>
