@@ -8,7 +8,7 @@ const HalfVenuePage: React.FC = () => {
     <div className="bg-[#1a1919] min-h-screen">
       <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Order-Drinks-to-table-pic.jpg" 
+          src="/photos/half venue/half_venue.jpg" 
           alt="Half Venue Booking" 
           className="w-full h-full object-cover brightness-[0.6] grayscale-[0.2]"
         />
@@ -25,27 +25,31 @@ const HalfVenuePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-[32px] md:text-[48px] font-black uppercase text-[#1a1919] leading-none mb-6">The Perfect <span className="text-[#F29100]">Mid-Size</span> Solution</h2>
-          <p className="text-[16px] md:text-[18px] text-[#1a1919]/70 leading-relaxed font-light mb-12">
-            Need more than a room but not the whole venue? Our Half Venue option provides the perfect balance. typically combining the Tiki Lounge and Mile High, or the Main Floor and Off Piste, this configuration allows for distinct zones while maintaining a cohesive party atmosphere.
+      <section className="grid grid-cols-1 lg:grid-cols-2 bg-white text-[#1a1919] border-b-2 border-[#1a1919]">
+        <div className="p-10 md:p-20 lg:p-24 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-[#1a1919]">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-black text-[#F29100] mb-10">VERSATILE SPACES</span>
+          <h2 className="text-[40px] md:text-[60px] font-black tracking-tighter uppercase leading-[0.9] mb-8">
+            The Perfect <span className="text-[#F29100]">Mid-Size</span> Solution.
+          </h2>
+          <p className="text-[17px] leading-relaxed font-light mb-12 text-[#1a1919]/80">
+            Need more than a room but not the whole venue? Our Half Venue option gives you exclusive use of Mile High and/or the main dance floor — the perfect configuration for a private party while the rest of the venue remains open.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="p-10 border-2 border-[#1a1919] flex flex-col items-center text-center">
-              <Split className="w-10 h-10 text-[#F29100] mb-6" />
-              <h4 className="text-[14px] font-black uppercase tracking-widest mb-4">Flexible Zoning</h4>
-              <p className="text-[13px] text-[#1a1919]/60">Perfect for separating the 'networking zone' from the 'dance zone'.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
+            <div className="space-y-3">
+              <Split className="w-8 h-8 text-[#F29100]" />
+              <h4 className="text-[13px] font-black uppercase tracking-widest">Flexible Zoning</h4>
+              <p className="text-[12px] text-[#1a1919]/60 font-medium">Perfect for separating the 'networking zone' from the 'dance zone'.</p>
             </div>
-            <div className="p-10 border-2 border-[#1a1919] flex flex-col items-center text-center">
-              <Sparkles className="w-10 h-10 text-[#F29100] mb-6" />
-              <h4 className="text-[14px] font-black uppercase tracking-widest mb-4">Themed Immersion</h4>
-              <p className="text-[13px] text-[#1a1919]/60">Keep the high-energy main floor but offer a tropical Tiki escape.</p>
+            <div className="space-y-3">
+              <Sparkles className="w-8 h-8 text-[#F29100]" />
+              <h4 className="text-[13px] font-black uppercase tracking-widest">Dedicated Space</h4>
+              <p className="text-[12px] text-[#1a1919]/60 font-medium">Mile High's private entrance and luxe aviation vibe — all yours for the night.</p>
             </div>
           </div>
-          <div className="mt-16">
-            <a href="#dmn-booking-container" className="inline-block px-10 py-5 bg-[#1a1919] text-white text-[11px] font-black tracking-widest uppercase hover:bg-[#F29100] transition-colors">Start Planning</a>
-          </div>
+        </div>
+        <div className="relative h-[400px] lg:h-auto overflow-hidden">
+          <img src="/photos/half venue/half_venue.jpg" className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]" />
+          <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-multiply"></div>
         </div>
       </section>
 

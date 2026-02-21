@@ -8,7 +8,7 @@ const OffPistePage: React.FC = () => {
     <div className="bg-[#1a1919] min-h-screen">
       <section className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Off-Piste-Lounge-scaled.jpg" 
+          src="/photos/off piste/off piste page header.jpg" 
           alt="Off Piste Alpine Lounge" 
           className="w-full h-full object-cover brightness-[0.6] contrast-[1.2] scale-105"
         />
@@ -42,7 +42,7 @@ const OffPistePage: React.FC = () => {
           </div>
         </div>
         <div className="relative h-[400px] lg:h-auto bg-black flex items-center justify-center p-12 overflow-hidden">
-          <img src="https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Off-Piste-Booth.png" className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale-[0.3]" />
+          <img src="/photos/off piste/off piste right side.jpg" className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale-[0.3]" />
           <div className="relative z-10 text-center border-4 border-[#F29100] p-10 backdrop-blur-sm">
              <h4 className="text-white text-[24px] md:text-[32px] font-black uppercase tracking-tighter mb-4">The VIP Lift</h4>
              <p className="text-[12px] text-white/70 font-black tracking-[0.3em] uppercase mb-6">CAPACITY: 8-10 GUESTS</p>

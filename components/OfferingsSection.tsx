@@ -14,7 +14,7 @@ const OfferingsSection: React.FC<OfferingsSectionProps> = ({ onNavigate }) => {
       content: "The heart of Southampton's nightlife. Discover our award-winning cocktail menu, crafted by master mixologists.",
       cta: "Explore Menu",
       view: 'cocktail-bar' as View,
-      bgImage: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Bottomless-Cocktails.jpg"
+      bgImage: "/photos/homepage/main_cocktail_bar.jpg"
     },
     {
       title: "Bottomless Brunches",

@@ -15,12 +15,12 @@ interface VenuesTabsSectionProps {
 }
 
 const venues: Venue[] = [
-  { id: 'tables', name: 'Tables', title: 'Start your weekend in style!', subtitle: 'Bottomless sessions from £25 - 2 hours unlimited cocktails!', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Bottomless-Cocktails.jpg' },
-  { id: 'tiki', name: 'Tiki', title: 'Exotic Escape', subtitle: 'Step into our tropical paradise with world-class Mai Tais.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2023/12/Garden-Tables-1.png' },
-  { id: 'off-piste', name: 'Off Piste', title: 'Alpine Lodge', subtitle: 'Cozy up in our mountain-inspired retreat. Perfect for gatherings.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2024/01/themed-brunches.jpg' },
-  { id: 'full-venue', name: 'Full Venue', title: 'The Ultimate Space', subtitle: 'Host up to 500 guests for the grandest celebrations.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Large-Cassette-Booth-Hero-image-1.png' },
-  { id: 'half-venue', name: 'Half Venue', title: 'Versatile Hosting', subtitle: 'Perfect for medium-sized events, networking, and parties.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Order-Drinks-to-table-pic.jpg' },
-  { id: 'mile-high', name: 'Mile High', title: 'First Class', subtitle: 'Take your night to new heights in our aviation VIP lounge.', image: 'https://www.orangerooms.co.uk/wp-content/uploads/2025/07/smores3-1-1.png' }
+  { id: 'tables', name: 'Tables', title: 'Start your weekend in style!', subtitle: 'Bottomless sessions from £25 - 2 hours unlimited cocktails!', image: '/photos/homepage/tables.jpg' },
+  { id: 'tiki', name: 'Tiki', title: 'Exotic Escape', subtitle: 'Step into our tropical paradise with world-class Mai Tais.', image: '/photos/homepage/tiki.jpg' },
+  { id: 'off-piste', name: 'Off Piste', title: 'Alpine Lodge', subtitle: 'Cozy up in our mountain-inspired retreat. Perfect for gatherings.', image: '/photos/homepage/off_piste.jpg' },
+  { id: 'full-venue', name: 'Full Venue', title: 'The Ultimate Space', subtitle: 'Host up to 500 guests for the grandest celebrations.', image: '/photos/homepage/full_venue.jpg' },
+  { id: 'half-venue', name: 'Half Venue', title: 'Versatile Hosting', subtitle: 'Perfect for medium-sized events, networking, and parties.', image: '/photos/homepage/half_venue.jpg' },
+  { id: 'mile-high', name: 'Mile High', title: 'First Class', subtitle: 'Take your night to new heights in our aviation VIP lounge.', image: '/photos/homepage/mile_high.jpg' }
 ];
 
 const VenuesTabsSection: React.FC<VenuesTabsSectionProps> = ({ onNavigate }) => {

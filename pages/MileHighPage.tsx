@@ -8,7 +8,7 @@ const MileHighPage: React.FC = () => {
     <div className="bg-[#1a1919] min-h-screen">
       <section className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/mile-high-logo.jpg" 
+          src="/photos/mile high/mile high header background.jpg" 
           alt="Mile High First Class Lounge" 
           className="w-full h-full object-cover brightness-[0.5] contrast-[1.1] scale-105"
         />
@@ -26,31 +26,31 @@ const MileHighPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-32 px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1 space-y-10">
-            <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">ELITE INDULGENCE</span>
-            <h2 className="text-[42px] md:text-[64px] font-black text-[#1a1919] uppercase leading-[0.9] tracking-tighter">Your <span className="text-[#F29100]">Luxury</span> Destination.</h2>
-            <p className="text-[16px] md:text-[18px] text-[#1a1919]/70 leading-relaxed font-light">
-              Elevate your evening in our aviation-themed sanctuary. With sleek curves, private booth service, and a dedicated 'First Class' bar, Mile High is Southampton's premium destination for those who appreciate the finer details. This is an exclusive area designed for intimate gatherings and VIP celebrations.
-            </p>
-            <div className="grid grid-cols-2 gap-8">
-              <div className="space-y-4">
-                 <Shield className="w-8 h-8 text-[#F29100]" />
-                 <h4 className="text-[12px] font-black uppercase tracking-widest text-[#1a1919]">Private Entrance</h4>
-                 <p className="text-[11px] text-[#1a1919]/60">Exclusive access for Mile High guests.</p>
-              </div>
-              <div className="space-y-4">
-                 <Sparkles className="w-8 h-8 text-[#F29100]" />
-                 <h4 className="text-[12px] font-black uppercase tracking-widest text-[#1a1919]">VIP Service</h4>
-                 <p className="text-[11px] text-[#1a1919]/60">Dedicated host and premium bottle menu.</p>
-              </div>
+      <section className="grid grid-cols-1 lg:grid-cols-2 bg-white text-[#1a1919] border-b-2 border-[#1a1919]">
+        <div className="p-10 md:p-20 lg:p-24 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-[#1a1919]">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-black text-[#F29100] mb-10">ELITE INDULGENCE</span>
+          <h2 className="text-[40px] md:text-[60px] font-black tracking-tighter uppercase leading-[0.9] mb-8">
+            Your <span className="text-[#F29100]">Luxury</span> Destination.
+          </h2>
+          <p className="text-[17px] leading-relaxed font-light mb-12 text-[#1a1919]/80">
+            Elevate your evening in our aviation-themed sanctuary. With sleek curves, private booth service, and a dedicated 'First Class' bar, Mile High is Southampton's premium destination for those who appreciate the finer details. This is an exclusive area designed for intimate gatherings and VIP celebrations.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
+            <div className="space-y-3">
+                <Shield className="w-8 h-8 text-[#F29100]" />
+                <h4 className="text-[13px] font-black uppercase tracking-widest">Private Entrance</h4>
+                <p className="text-[12px] text-[#1a1919]/60 font-medium">Exclusive access for Mile High guests.</p>
+            </div>
+            <div className="space-y-3">
+                <Sparkles className="w-8 h-8 text-[#F29100]" />
+                <h4 className="text-[13px] font-black uppercase tracking-widest">VIP Service</h4>
+                <p className="text-[12px] text-[#1a1919]/60 font-medium">Dedicated host and premium bottle menu.</p>
             </div>
           </div>
-          <div className="flex-1 relative">
-            <div className="absolute -inset-4 border-2 border-[#F29100] translate-x-4 translate-y-4"></div>
-            <img src="https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Neon-Booth.png" className="relative z-10 w-full h-auto grayscale-[0.2]" />
-          </div>
+        </div>
+        <div className="relative h-[400px] lg:h-auto overflow-hidden">
+            <img src="/photos/mile high/mile high right side image.jpg" className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]" />
+            <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-multiply"></div>
         </div>
       </section>
 

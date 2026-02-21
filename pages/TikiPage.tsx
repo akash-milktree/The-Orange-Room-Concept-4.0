@@ -33,7 +33,7 @@ const TikiPage: React.FC = () => {
       {/* 1. HERO HEADER */}
       <section className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Tiki-Lounge-scaled.jpg" 
+          src="/photos/tiki/tiki page header.jpg"
           alt="Tiki Lounge" 
           className="w-full h-full object-cover brightness-[0.6] grayscale-[0.1] scale-105 animate-slow-zoom"
         />
@@ -84,7 +84,7 @@ const TikiPage: React.FC = () => {
         </div>
         <div className="relative h-[400px] lg:h-auto overflow-hidden bg-[#1a1919]">
             <img 
-              src="https://www.orangerooms.co.uk/wp-content/uploads/2023/12/Garden-Tables-1.png" 
+              src="/photos/tiki/tiki right side.jpg" 
               className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-overlay"></div>

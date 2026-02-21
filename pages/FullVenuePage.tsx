@@ -9,7 +9,7 @@ const FullVenuePage: React.FC = () => {
       {/* 1. HERO HEADER */}
       <section className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/The-Full-Venue-scaled.jpg" 
+          src="/photos/full venue/full_venue header.jpg" 
           alt="Full Venue Takeover" 
           className="w-full h-full object-cover brightness-[0.5] contrast-[1.1] scale-105 animate-slow-zoom"
         />
@@ -37,12 +37,12 @@ const FullVenuePage: React.FC = () => {
             Grand Scale <br /> <span className="text-[#F29100]">Experience</span>.
           </h2>
           <p className="text-[17px] leading-relaxed font-light mb-12 text-[#1a1919]/80">
-            Orange Rooms is one of Southampton's most versatile and unique event spaces. A full venue hire gives you exclusive access to all our themed areas: Tiki Lounge, Off Piste, Mile High, and the Main Floor. With three bars, state-of-the-art sound systems, and a professional event team, your corporate gala, brand launch, or landmark celebration is in safe hands.
+            Orange Rooms is one of Southampton's most versatile and unique event spaces. A full venue hire gives you exclusive access to all our themed areas: Tiki Lounge, Off Piste, Mile High, and the Main Floor. With four bars, state-of-the-art sound systems, and a professional event team, your corporate gala, brand launch, or landmark celebration is in safe hands.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
             <div className="space-y-3">
                 <Layout className="w-8 h-8 text-[#F29100]" />
-                <h4 className="text-[13px] font-black uppercase tracking-widest">4 Rooms / 3 Bars</h4>
+                <h4 className="text-[13px] font-black uppercase tracking-widest">4 Rooms / 4 Bars</h4>
                 <p className="text-[12px] text-[#1a1919]/60 font-medium">Distinct thematic zones for different vibes.</p>
             </div>
             <div className="space-y-3">
@@ -53,7 +53,7 @@ const FullVenuePage: React.FC = () => {
           </div>
         </div>
         <div className="relative h-[400px] lg:h-auto overflow-hidden">
-            <img src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Order-Drinks-to-table-pic.jpg" className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]" />
+            <img src="/photos/full venue/full venue right side.jpg" className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]" />
             <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-multiply"></div>
         </div>
       </section>

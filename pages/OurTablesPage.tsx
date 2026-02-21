@@ -10,42 +10,42 @@ const OurTablesPage: React.FC = () => {
     {
       title: "Fish Tank Tables",
       capacity: "4 - 6 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/fishtank-tables.jpg",
+      image: "/photos/venues/tables/Fish Tank Tables.jpg",
       description: "Iconic seating right next to our live tropical fish tanks. A unique aquatic backdrop for your cocktails.",
       vibe: "AQUATIC / CHILL"
     },
     {
       title: "High Bar Tables",
       capacity: "2 - 4 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/high-bar-tables.jpg",
+      image: "/photos/venues/tables/High Bar Tables.jpg",
       description: "Perfect for smaller groups who want to be in the heart of the bar's energy and close to the action.",
       vibe: "SOCIAL / ENERGETIC"
     },
     {
       title: "Neon Booth",
       capacity: "6 - 8 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Neon-Booth.png",
+      image: "/photos/venues/tables/Neon Booth.jpg",
       description: "Vibrant and immersive, our neon booths are the perfect spot for those iconic late-night photos.",
       vibe: "RETRO / NEON"
     },
     {
       title: "Small Cassette Booth",
       capacity: "4 - 6 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Small-Cassette-Booth.png",
+      image: "/photos/venues/tables/Small Cassette Booth.jpg",
       description: "Intimate retro-themed booth featuring our signature oversized cassette tape wall art.",
       vibe: "RETRO / INTIMATE"
     },
     {
       title: "Large Cassette Booth",
       capacity: "8 - 12 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Large-Cassette-Booth-Hero-image-1.png",
+      image: "/photos/venues/tables/Large Cassette Booth.jpg",
       description: "Our most popular large booking spot. Plenty of room for big groups to celebrate in style.",
       vibe: "LEGENDARY / PARTY"
     },
     {
       title: "Small Dance Floor Booth",
       capacity: "6 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Small-Dance-Floor-Booth.png",
+      image: "/photos/venues/tables/Small Dancefloor Booth.jpg",
       description: "Direct access to the dance floor. Ideal for those who want to transition from drinks to dancing seamlessly.",
       vibe: "DANCE / ACTIVE"
     },
@@ -73,7 +73,7 @@ const OurTablesPage: React.FC = () => {
     {
       title: "Off Piste Booth",
       capacity: "6 - 10 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2025/07/Off-Piste-Booth.png",
+      image: "/photos/venues/tables/Off Piste Booth.jpg",
       description: "Alpine-themed cozy corners with faux fur and wood-cabin vibes in our ski-lodge room.",
       vibe: "ALPINE / COZY"
     }
@@ -83,42 +83,42 @@ const OurTablesPage: React.FC = () => {
     {
       title: "Full Venue",
       capacity: "Up to 500 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2023/10/The-Full-Venue-scaled.jpg",
+      image: "/photos/venues/spaces/full_venue.jpg",
       description: "The ultimate takeover. Take control of all our rooms, including Tiki, Off Piste, and the main floor.",
       features: "4 ROOMS / 3 BARS / STAGE"
     },
     {
       title: "Half Venue",
       capacity: "Up to 250 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Order-Drinks-to-table-pic.jpg",
+      image: "/photos/venues/spaces/half_venue.jpg",
       description: "A flexible option for medium-sized corporate events and private parties.",
       features: "2 ROOMS / 2 BARS"
     },
     {
       title: "Tiki Lounge",
       capacity: "Up to 150 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Tiki-Lounge-scaled.jpg",
+      image: "/photos/venues/spaces/tiki lounge.jpg",
       description: "Southampton's original Tiki bar. Fully immersive tropical decor and dedicated cocktail bar.",
       features: "PRIVATE BAR / EXOTIC VIBE"
     },
     {
       title: "Off Piste",
       capacity: "Up to 100 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Off-Piste-Lounge-scaled.jpg",
+      image: "/photos/venues/spaces/Off Piste Booth.jpg",
       description: "Our alpine-themed retreat. Perfect for a cozy winter vibe or a unique themed celebration.",
       features: "WOOD CABIN / SHOT-SKIS"
     },
     {
       title: "Mile High",
       capacity: "Up to 60 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/mile-high-logo.jpg",
+      image: "/photos/venues/spaces/mile high.jpg",
       description: "Aviation-themed first-class lounge. Sleek, sophisticated, and exclusive for your top-tier guests.",
       features: "VIP LOUNGE / PRIVATE BAR"
     },
     {
       title: "Outside Orange",
       capacity: "Up to 80 Guests",
-      image: "https://www.orangerooms.co.uk/wp-content/uploads/2023/12/Garden-Tables-1.png",
+      image: "/photos/venues/spaces/outside orange.jpg",
       description: "Our Al Fresco oasis. Perfect for summer socials, garden parties, and outdoor cocktails.",
       features: "OUTDOOR / TROPICAL GARDEN"
     }
@@ -128,8 +128,8 @@ const OurTablesPage: React.FC = () => {
     <div className="bg-[#1a1919] min-h-screen">
       {/* 1. PAGE HEADER: Landscape Landscape */}
       <section className="relative h-[65vh] md:h-[75vh] w-full overflow-hidden border-b-2 border-white/50">
-        <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2023/10/The-Full-Venue-scaled.jpg" 
+        <img
+          src="/photos/venues/our tables page header background image.jpg"
           alt="Our Tables & Spaces" 
           className="w-full h-full object-cover grayscale-[0.1] contrast-[1.1] brightness-[0.7] scale-105 transition-transform duration-[10s]"
         />
