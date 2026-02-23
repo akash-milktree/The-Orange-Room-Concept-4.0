@@ -70,6 +70,14 @@
         animation: marquee 20s linear infinite;
       }
 
+      @keyframes marquee-reverse {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-marquee-reverse {
+        animation: marquee-reverse 20s linear infinite;
+      }
+
       @keyframes spin3d {
         from { transform: rotateY(0deg); }
         to { transform: rotateY(360deg); }
@@ -89,6 +97,7 @@
       }
     </style>
     <script type="module" src="/index.tsx"></script>
+    <script src="https://widgets.designmynight.com/bookings-partner.min.js" async></script>
   </head>
   <body>
     <div id="root"></div>

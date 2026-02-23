@@ -8,8 +8,8 @@ const CocktailBarPage: React.FC = () => {
     {
       title: "Private Masterclass",
       details: "Perfect for birthdays, hen parties or just a group of friends wanting a laugh.",
-      includes: ["3 Cocktails each", "Interactive Training", "Selection of Bar Snacks"],
-      price: "From £25pp"
+      includes: ["Glass of Bubbles on Arrival", "2 Cocktails Each", "Layered Shot to Finish"],
+      price: "£27pp"
     },
     {
       title: "Corporate Team Build",
@@ -19,9 +19,9 @@ const CocktailBarPage: React.FC = () => {
     },
     {
       title: "VIP Public Session",
-      details: "Join our expert mixologists for an intimate look at seasonal menu items.",
+      details: "Join our expert mixologists for an intimate look at seasonal menu items and spirit deep-dives.",
       includes: ["Menu Insights", "Advanced Techniques", "Gift Bags Included"],
-      price: "£35.00"
+      price: "Enquire for Pricing"
     }
   ];
 
@@ -30,7 +30,7 @@ const CocktailBarPage: React.FC = () => {
       {/* 1. HERO HEADER */}
       <section className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Bottomless-Cocktails.jpg" 
+          src="/photos/cocktail/cocktail page header.jpg" 
           alt="Award Winning Cocktail Bar" 
           className="w-full h-full object-cover brightness-[0.5] contrast-[1.2] scale-105"
         />
@@ -55,26 +55,24 @@ const CocktailBarPage: React.FC = () => {
             Shaken, Stirred, <br /> <span className="text-[#F29100]">Perfected</span>.
           </h2>
           <p className="text-[17px] leading-relaxed font-light mb-12 text-[#1a1919]/80">
-            For 23 years, Orange Rooms has been the epicenter of Southampton's cocktail culture. Our mixologists don't just follow recipes; they push boundaries. From tropical Tiki staples to retro-inspired house specials, every drink is a testament to our passion for liquid art. We source only the finest spirits and freshest botanicals to ensure every sip is legendary.
+            For 25 years, Orange Rooms has been the epicenter of Southampton's cocktail culture. Our mixologists don't just follow recipes; they push boundaries. From tropical Tiki staples to retro-inspired house specials, every drink is a testament to our passion for liquid art. We source only the finest spirits and freshest botanicals to ensure every sip is legendary.
           </p>
-          <div className="flex gap-12">
-            <div className="flex flex-col">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
+            <div className="space-y-3">
                 <span className="text-[28px] font-black text-[#F29100]">50+</span>
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#1a1919]/40">UNIQUE RECIPES</span>
+                <h4 className="text-[13px] font-black uppercase tracking-widest">Unique Recipes</h4>
+                <p className="text-[12px] text-[#1a1919]/60 font-medium">Crafted in-house by our master mixologists.</p>
             </div>
-            <div className="flex flex-col">
-                <span className="text-[28px] font-black text-[#F29100]">23</span>
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#1a1919]/40">YEARS OF INNOVATION</span>
+            <div className="space-y-3">
+                <span className="text-[28px] font-black text-[#F29100]">25</span>
+                <h4 className="text-[13px] font-black uppercase tracking-widest">Years of Innovation</h4>
+                <p className="text-[12px] text-[#1a1919]/60 font-medium">Southampton's original cocktail pioneers since 2001.</p>
             </div>
           </div>
         </div>
-        <div className="relative h-[400px] lg:h-auto overflow-hidden bg-black flex items-center justify-center">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200" className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" />
+        <div className="relative h-[400px] lg:h-auto overflow-hidden">
+            <img src="/photos/cocktail/cocktail page right side.jpg" className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]" />
             <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-multiply"></div>
-            <div className="relative z-10 border-2 border-white/50 p-12 backdrop-blur-md bg-black/20 text-center">
-                <Martini className="w-12 h-12 text-white mx-auto mb-6" />
-                <h4 className="text-white text-[20px] font-black uppercase tracking-widest">Liquid Gold</h4>
-            </div>
         </div>
       </section>
 
@@ -85,7 +83,7 @@ const CocktailBarPage: React.FC = () => {
              <div className="max-w-2xl">
                 <span className="text-[10px] md:text-[12px] uppercase tracking-[0.6em] font-black text-[#F29100] mb-6 block">LEARN THE CRAFT</span>
                 <h2 className="text-[42px] md:text-[64px] lg:text-[88px] font-black leading-none tracking-tighter text-white uppercase">
-                  Cocktail <br /> <span className="text-[#F29100] font-serif italic font-semibold">Masterclasses</span>
+                  Cocktail <br /> <span className="text-[#F29100] font-semibold">Masterclasses</span>
                 </h2>
              </div>
              <p className="text-white/40 text-[14px] md:text-[16px] leading-relaxed font-light max-w-sm">
@@ -93,9 +91,9 @@ const CocktailBarPage: React.FC = () => {
              </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-white/30">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-2 border-white/50">
             {masterclasses.map((cls, idx) => (
-              <div key={idx} className={`p-10 md:p-14 flex flex-col h-full bg-[#1a1919] hover:bg-[#F29100]/5 transition-colors duration-500 ${idx < 2 ? 'md:border-r-2 border-white/30' : ''} border-b-2 md:border-b-0 border-white/30`}>
+              <div key={idx} className={`p-10 md:p-14 flex flex-col h-full bg-[#1a1919] hover:bg-[#F29100]/5 transition-colors duration-500 ${idx < 2 ? 'md:border-r-2 border-white/50' : ''} border-b-2 md:border-b-0 border-white/50`}>
                 <div className="mb-8">
                   <h3 className="text-[24px] md:text-[28px] font-bold text-white uppercase tracking-tighter mb-4">{cls.title}</h3>
                   <p className="text-white/60 text-[14px] font-light leading-relaxed">{cls.details}</p>
@@ -110,7 +108,7 @@ const CocktailBarPage: React.FC = () => {
                   ))}
                 </ul>
 
-                <div className="pt-8 border-t border-white/10 flex items-center justify-between">
+                <div className="pt-8 border-t border-white/50 flex items-center justify-between">
                   <span className="text-[14px] font-black text-white">{cls.price}</span>
                   <a href="#dmn-booking-container" className="p-3 bg-[#F29100] rounded-full hover:bg-white transition-all group">
                     <ChevronRight className="w-5 h-5 text-white group-hover:text-black" />
@@ -130,7 +128,7 @@ const CocktailBarPage: React.FC = () => {
                     Book Your Class
                 </a>
              </div>
-             <div className="bg-white/5 border-2 border-white/20 p-10 flex flex-col items-center justify-center text-center">
+             <div className="bg-white/5 border-2 border-white/50 p-10 flex flex-col items-center justify-center text-center">
                 <Flame className="w-8 h-8 text-[#F29100] mb-4" />
                 <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">LIMITED SLOTS</span>
                 <span className="text-[14px] font-black text-white mt-1 uppercase">WEEKENDS SELL OUT</span>
@@ -139,35 +137,62 @@ const CocktailBarPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. DRINKS TEASER GALLERY */}
-      <section className="bg-[#1a1919] grid grid-cols-1 md:grid-cols-4 h-auto md:h-[500px] border-b-2 border-white/50 overflow-hidden">
-        <div className="relative group overflow-hidden border-b-2 md:border-b-0 md:border-r-2 border-white/50">
-            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" />
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-all flex flex-col justify-end p-8">
-                <span className="text-[9px] font-black text-[#F29100] tracking-widest mb-1 uppercase">THE TIKI CLASSIC</span>
-                <h4 className="text-white text-[20px] font-black uppercase">Mai Tai</h4>
-            </div>
+      {/* 4. DRINKS CAROUSEL GALLERY */}
+      <section className="bg-[#1a1919] py-0 border-b-2 border-white/50 overflow-hidden">
+        {/* Row 1: Scrolls Left — border-b acts as the single shared divider */}
+        <div className="overflow-hidden border-b-2 border-white/50">
+          <div className="flex animate-marquee" style={{width: 'max-content'}}>
+            {[
+              '/photos/cocktail/gallery/IMG_20250625_203444.jpg',
+              '/photos/cocktail/gallery/Espresso Martini.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 12.jpg',
+              '/photos/cocktail/gallery/Bramble.png',
+              '/photos/cocktail/gallery/IMG-20250630-WA0005.jpg',
+              '/photos/cocktail/gallery/Rasp Gin Fizz.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 27.jpg',
+              '/photos/cocktail/gallery/IMG_20250708_151039.jpg',
+              '/photos/cocktail/gallery/IMG_20250625_203444.jpg',
+              '/photos/cocktail/gallery/Espresso Martini.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 12.jpg',
+              '/photos/cocktail/gallery/Bramble.png',
+              '/photos/cocktail/gallery/IMG-20250630-WA0005.jpg',
+              '/photos/cocktail/gallery/Rasp Gin Fizz.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 27.jpg',
+              '/photos/cocktail/gallery/IMG_20250708_151039.jpg',
+            ].map((src, i) => (
+              <div key={i} className="w-[350px] h-[425px] flex-shrink-0 border-r-2 border-white/50 overflow-hidden bg-white/5">
+                <img src={src} alt="" className="w-full h-full object-cover grayscale-[0.2]" />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="relative group overflow-hidden border-b-2 md:border-b-0 md:border-r-2 border-white/50">
-            <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" />
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-all flex flex-col justify-end p-8">
-                <span className="text-[9px] font-black text-[#F29100] tracking-widest mb-1 uppercase">ALPINE REFRESH</span>
-                <h4 className="text-white text-[20px] font-black uppercase">Ski-Lift Spritz</h4>
-            </div>
-        </div>
-        <div className="relative group overflow-hidden border-b-2 md:border-b-0 md:border-r-2 border-white/50">
-            <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" />
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-all flex flex-col justify-end p-8">
-                <span className="text-[9px] font-black text-[#F29100] tracking-widest mb-1 uppercase">ORANGE SPECIAL</span>
-                <h4 className="text-white text-[20px] font-black uppercase">Zest Martini</h4>
-            </div>
-        </div>
-        <div className="relative group overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0" />
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-transparent transition-all flex flex-col justify-end p-8">
-                <span className="text-[9px] font-black text-[#F29100] tracking-widest mb-1 uppercase">RETRO VIBE</span>
-                <h4 className="text-white text-[20px] font-black uppercase">Cosmo 01</h4>
-            </div>
+
+        {/* Row 2: Scrolls Right — no border-t, shared line comes from row 1's border-b */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee-reverse" style={{width: 'max-content'}}>
+            {[
+              '/photos/cocktail/gallery/IMG_20250630_150427.jpg',
+              '/photos/cocktail/gallery/Caiprihna.png',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 40.jpg',
+              '/photos/cocktail/gallery/LIZ Old Fashioned.png',
+              '/photos/cocktail/gallery/IMG_20250708_175051.jpg',
+              '/photos/cocktail/gallery/Bottomless-Cocktails.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 41.jpg',
+              '/photos/cocktail/gallery/IMG_20250625_214028.jpg',
+              '/photos/cocktail/gallery/IMG_20250630_150427.jpg',
+              '/photos/cocktail/gallery/Caiprihna.png',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 40.jpg',
+              '/photos/cocktail/gallery/LIZ Old Fashioned.png',
+              '/photos/cocktail/gallery/IMG_20250708_175051.jpg',
+              '/photos/cocktail/gallery/Bottomless-Cocktails.jpg',
+              '/photos/cocktail/gallery/Orange Rooms 07.02.2026 41.jpg',
+              '/photos/cocktail/gallery/IMG_20250625_214028.jpg',
+            ].map((src, i) => (
+              <div key={i} className="w-[350px] h-[425px] flex-shrink-0 border-r-2 border-white/50 overflow-hidden bg-white/5">
+                <img src={src} alt="" className="w-full h-full object-cover grayscale-[0.2]" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

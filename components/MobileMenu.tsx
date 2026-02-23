@@ -60,7 +60,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
             {/* MENUS + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-75 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
-                <span className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] leading-tight">
+                <span className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#F29100] leading-tight tracking-tight">
                   Menu
                 </span>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-2 py-2">
@@ -76,7 +76,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
             {/* VENUES + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-150 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
-                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('tables'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('tables'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
                   Venues
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
@@ -92,7 +92,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
             {/* LINEUP + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-225 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
-                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
                   Lineup
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
@@ -108,7 +108,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
             {/* BOOKINGS + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-300 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
-                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('private-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#f5f5f1] hover:text-[#F29100] leading-tight transition-all">
+                <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('private-hire'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
                   Bookings
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
@@ -123,7 +123,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
 
             {/* BOOK */}
             <div className={`transition-all duration-700 delay-375 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('book'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-serif font-light text-[#F29100] hover:text-white leading-tight transition-all">
+              <a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('book'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#F29100] hover:text-white leading-tight tracking-tight transition-all">
                 Reserve a Table
               </a>
             </div>

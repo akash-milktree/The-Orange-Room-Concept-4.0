@@ -149,7 +149,7 @@ const ReviewsSection: React.FC = () => {
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => ( <div key={i} className="w-2.5 h-2.5 rounded-full bg-[#00af87]"></div> ))}
                 </div>
-                <h5 className="text-[14px] font-bold font-serif italic text-white/90 leading-tight">{item.title}</h5>
+                <h5 className="text-[14px] font-bold text-white/90 leading-tight">{item.title}</h5>
               </div>
               <p className="text-[13px] text-white/60 leading-relaxed font-light">{item.content}</p>
             </div>

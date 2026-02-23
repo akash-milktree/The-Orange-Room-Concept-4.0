@@ -7,10 +7,31 @@ const DrinksMenuPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // These would be the URLs to the actual menu images (like your screenshot)
   const menuImages = [
-    "https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Drinks-Menu-1.jpg", // Placeholder for actual board 1
-    "https://www.orangerooms.co.uk/wp-content/uploads/2023/10/Drinks-Menu-2.jpg", // Placeholder for actual board 2
+    "/photos/drinks/menu/SUMMER-INSIDE-1.png",
+    "/photos/drinks/menu/SUMMER-OUTSIDE-1.png",
+  ];
+
+  const row1Images = [
+    '/photos/cocktail/gallery/IMG_20250625_203444.jpg',
+    '/photos/cocktail/gallery/Espresso Martini.jpg',
+    '/photos/cocktail/gallery/Orange Rooms 07.02.2026 12.jpg',
+    '/photos/cocktail/gallery/Bramble.png',
+    '/photos/cocktail/gallery/IMG-20250630-WA0005.jpg',
+    '/photos/cocktail/gallery/Rasp Gin Fizz.jpg',
+    '/photos/cocktail/gallery/Orange Rooms 07.02.2026 27.jpg',
+    '/photos/cocktail/gallery/IMG_20250708_151039.jpg',
+  ];
+
+  const row2Images = [
+    '/photos/cocktail/gallery/IMG_20250630_150427.jpg',
+    '/photos/cocktail/gallery/Caiprihna.png',
+    '/photos/cocktail/gallery/Orange Rooms 07.02.2026 40.jpg',
+    '/photos/cocktail/gallery/LIZ Old Fashioned.png',
+    '/photos/cocktail/gallery/IMG_20250708_175051.jpg',
+    '/photos/cocktail/gallery/Bottomless-Cocktails.jpg',
+    '/photos/cocktail/gallery/Orange Rooms 07.02.2026 41.jpg',
+    '/photos/cocktail/gallery/IMG_20250625_214028.jpg',
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % menuImages.length);
@@ -51,8 +72,8 @@ const DrinksMenuPage: React.FC = () => {
       {/* HERO SECTION */}
       <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden border-b-2 border-white/50">
         <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Bottomless-Cocktails.jpg" 
-          alt="Drinks Menu" 
+          src="/photos/drinks/drinks page header.jpg"
+          alt="Drinks Menu"
           className="w-full h-full object-cover brightness-[0.4] contrast-[1.1]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1919] via-transparent to-black/60" />
@@ -76,16 +97,16 @@ const DrinksMenuPage: React.FC = () => {
               </h2>
             </div>
             <div className="flex gap-4">
-              <button onClick={prevSlide} className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
+              <button onClick={prevSlide} className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <button onClick={nextSlide} className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
+              <button onClick={nextSlide} className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
           </div>
 
-          <div className="relative group aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-black/40 border-2 border-white/10">
+          <div className="relative group min-h-[70vh] overflow-hidden bg-black/40 border-2 border-white/50">
             <div 
               className="w-full h-full flex transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -104,7 +125,7 @@ const DrinksMenuPage: React.FC = () => {
                   <div className="absolute bottom-10 right-10 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
                       onClick={() => setIsLightboxOpen(true)}
-                      className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 text-white hover:bg-[#F29100] transition-colors"
+                      className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/50 text-white hover:bg-[#F29100] transition-colors"
                     >
                       <Maximize2 className="w-6 h-6" />
                     </button>
@@ -206,6 +227,30 @@ const DrinksMenuPage: React.FC = () => {
         {/* Floating Martini Icon */}
         <div className="absolute -right-20 -bottom-20 opacity-10 blur-sm pointer-events-none">
            <Martini className="w-[400px] h-[400px] text-white" />
+        </div>
+      </section>
+
+      {/* GALLERY CAROUSEL */}
+      <section className="bg-[#1a1919] py-0 border-b-2 border-white/50 overflow-hidden">
+        {/* Row 1: Scrolls Left — border-b is the single shared divider */}
+        <div className="overflow-hidden border-b-2 border-white/50">
+          <div className="flex animate-marquee" style={{width: 'max-content'}}>
+            {[...row1Images, ...row1Images].map((src, i) => (
+              <div key={i} className="w-[350px] h-[425px] flex-shrink-0 border-r-2 border-white/50 overflow-hidden bg-white/5">
+                <img src={src} alt="" className="w-full h-full object-cover grayscale-[0.2]" />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Row 2: Scrolls Right */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee-reverse" style={{width: 'max-content'}}>
+            {[...row2Images, ...row2Images].map((src, i) => (
+              <div key={i} className="w-[350px] h-[425px] flex-shrink-0 border-r-2 border-white/50 overflow-hidden bg-white/5">
+                <img src={src} alt="" className="w-full h-full object-cover grayscale-[0.2]" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

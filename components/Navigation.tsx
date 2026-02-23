@@ -113,7 +113,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
                           setActiveDropdown(null);
                         }}
                         className={`
-                          flex items-center px-10 h-24 text-[10px] font-black uppercase tracking-[0.3em] 
+                          flex items-center px-10 h-24 text-[10px] font-sans font-black uppercase tracking-[0.3em]
                           transition-all duration-200 border-b-2 border-white/20 last:border-b-0
                           text-white hover:bg-[#F29100] hover:text-white
                         `}

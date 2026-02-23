@@ -43,8 +43,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="pt-4 md:pt-8 space-y-4">
-            <p className="text-[10px] md:text-[11px] text-white/40 leading-relaxed font-light italic">Age requirement: 21+<br />Under 21? Join us before 18:00/6pm.</p>
-            <p className="text-[9px] md:text-[10px] text-white/20 uppercase tracking-widest font-black pt-2">Copyright © 2024 Orange Rooms. All rights reserved.</p>
+            <p className="text-[10px] md:text-[11px] text-white/40 leading-relaxed font-light italic">Age requirement: 18+</p>
+            <p className="text-[9px] md:text-[10px] text-white/20 uppercase tracking-widest font-black pt-2">Copyright © 2026 Orange Rooms. All rights reserved.</p>
           </div>
         </div>
 
@@ -52,17 +52,20 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="p-8 md:p-12 lg:p-16 flex flex-col border-b-2 md:border-b-0 border-white/10 lg:border-b-0 min-w-0">
           <h3 className="text-[28px] md:text-[32px] font-bold tracking-tight text-white leading-none mb-8 md:mb-12">Opening hours</h3>
           <div className="grid grid-cols-2 gap-y-4 md:gap-y-6 text-[14px] md:text-[15px]">
-            <span className="text-white/80">Mon to Thu</span>
-            <span className="text-white text-right">16:00-02:00</span>
+            <span className="text-white/80">Mon</span>
+            <span className="text-white/50 text-right italic text-[13px]">Private Hires Only</span>
 
-            <span className="text-white/80">Fri</span>
-            <span className="text-white text-right">16:00-03:00</span>
+            <span className="text-white/80">Tue</span>
+            <span className="text-white/50 text-right italic text-[13px]">Private Hires Only</span>
+
+            <span className="text-white/80">Wed — Fri</span>
+            <span className="text-white text-right">16:00–03:00</span>
 
             <span className="text-white/80">Sat</span>
-            <span className="text-white text-right">12:00-03:00</span>
+            <span className="text-white text-right">14:00–03:00</span>
 
             <span className="text-white/80 border-t border-white/10 pt-4">Sun</span>
-            <span className="text-white text-right border-t border-white/10 pt-4">12:00-00:00</span>
+            <span className="text-white/50 text-right border-t border-white/10 pt-4 italic text-[13px]">Private Hires Only</span>
           </div>
         </div>
 

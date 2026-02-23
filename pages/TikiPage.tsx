@@ -46,7 +46,7 @@ const TikiPage: React.FC = () => {
           <h1 className="text-[60px] md:text-[100px] lg:text-[140px] font-black leading-none tracking-tighter text-white uppercase mb-4 animate-fade-in">
             Tiki <span className="text-[#F29100]">Lounge</span>
           </h1>
-          <p className="font-serif italic text-white/80 text-[18px] md:text-[24px] max-w-2xl mx-auto animate-fade-in-up">
+          <p className="text-white/80 text-[18px] md:text-[24px] max-w-2xl mx-auto animate-fade-in-up">
             Southampton's original tropical escape, where the cocktails are cold and the vibes are exotic.
           </p>
           <div className="w-24 md:w-40 h-1.5 md:h-2.5 bg-[#F29100] mt-10 shadow-2xl"></div>
@@ -89,7 +89,7 @@ const TikiPage: React.FC = () => {
             />
             <div className="absolute inset-0 bg-[#F29100]/20 mix-blend-overlay"></div>
             <div className="absolute bottom-10 left-10 right-10 p-8 border-2 border-white/30 backdrop-blur-md bg-black/40">
-                <p className="text-white text-[18px] md:text-[22px] font-serif italic">
+                <p className="text-white text-[18px] md:text-[22px]">
                     "The best Mai Tai this side of Honolulu. An absolute must-visit."
                 </p>
                 <div className="mt-4 flex items-center gap-2">

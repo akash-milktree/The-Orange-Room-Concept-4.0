@@ -27,11 +27,11 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           
           <div className="space-y-6 md:space-y-8">
             <h2 className="text-[24px] sm:text-[28px] md:text-[34px] lg:text-[42px] font-medium tracking-tight text-white/95 leading-tight">
-              Southampton's legendary sanctuary for <span className="text-[#F29100] font-serif italic font-semibold">Good Vibes</span>.
+              Southampton's legendary sanctuary for <span className="text-[#F29100] font-semibold">Good Vibes</span>.
             </h2>
             
             <p className="text-[14px] lg:text-[16px] text-white/70 leading-[1.6] lg:leading-[1.8] font-light max-w-[480px]">
-              Celebrating 23 incredible years! Step into our retro-inspired wonderland from tropical Tiki escapes to alpine beats in Off Piste. 
+              Celebrating 25 incredible years! Step into our retro-inspired wonderland from tropical Tiki escapes to alpine beats in Off Piste.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               </a>
               <a 
                 href="mailto:info@orangerooms.co.uk" 
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/30 text-white font-black text-[12px] tracking-[0.25em] uppercase hover:border-[#F29100] hover:text-[#F29100] transition-all"
+                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/50 text-white font-black text-[12px] tracking-[0.25em] uppercase hover:border-[#F29100] hover:text-[#F29100] transition-all"
               >
                 Get in Touch!
               </a>

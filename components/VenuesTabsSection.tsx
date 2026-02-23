@@ -51,7 +51,7 @@ const VenuesTabsSection: React.FC<VenuesTabsSectionProps> = ({ onNavigate }) => 
             className={`
               flex-shrink-0 px-8 lg:px-0 lg:flex items-center justify-center transition-all duration-300 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[8px] md:text-[10px] font-black h-full
               ${activeTab.id === venue.id ? 'bg-[#F29100] text-white' : 'text-white/60 hover:bg-white/10'}
-              ${idx < venues.length - 1 ? 'lg:block-border border-r-2 border-white/20 lg:border-r-auto' : ''}
+              ${idx < venues.length - 1 ? 'lg:block-border border-r-2 border-white/50 lg:border-r-auto' : ''}
             `}
           >
             {venue.name}
@@ -76,7 +76,7 @@ const VenuesTabsSection: React.FC<VenuesTabsSectionProps> = ({ onNavigate }) => 
             <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.(activeTab.id as View); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 bg-[#F29100] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:bg-white hover:text-[#1a1919] transition-all duration-300 shadow-xl cursor-pointer">
               View Details
             </a>
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/40 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl cursor-pointer">
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/50 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl cursor-pointer">
               Book Now
             </a>
           </div>

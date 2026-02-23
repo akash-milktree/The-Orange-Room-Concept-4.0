@@ -62,7 +62,7 @@ const OfferingsSection: React.FC<OfferingsSectionProps> = ({ onNavigate }) => {
     <section className="bg-[#1a1919] flex flex-col">
       {/* Section Header Bar */}
       <div className="h-20 lg:h-24 nav-border grid grid-cols-2 lg:grid-cols-6 box-border bg-[#1a1919]">
-        <div className="flex items-center justify-center lg:block-border h-full px-4 border-r-2 border-white/30">
+        <div className="flex items-center justify-center lg:block-border h-full px-4 border-r-2 border-white/50">
           <span className="text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-black text-[#F29100]">THE LINEUP</span>
         </div>
         <div className="hidden lg:block lg:col-span-5 h-full opacity-0" />
@@ -75,9 +75,9 @@ const OfferingsSection: React.FC<OfferingsSectionProps> = ({ onNavigate }) => {
             key={idx}
             onClick={() => onNavigate?.(item.view)}
             className={`
-              relative overflow-hidden group transition-all duration-500 cursor-pointer border-b-2 border-white/30 min-h-[350px] lg:min-h-[450px]
-              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/30' : ''}
-              ${idx % 2 === 0 ? 'md:border-r-2 md:border-white/30 lg:border-r-auto' : ''}
+              relative overflow-hidden group transition-all duration-500 cursor-pointer border-b-2 border-white/50 min-h-[350px] lg:min-h-[450px]
+              ${(idx + 1) % 3 !== 0 ? 'lg:border-r-2 lg:border-white/50' : ''}
+              ${idx % 2 === 0 ? 'md:border-r-2 md:border-white/50 lg:border-r-auto' : ''}
             `}
           >
             {/* Image Layer: Now partially visible by default for better visual feedback */}

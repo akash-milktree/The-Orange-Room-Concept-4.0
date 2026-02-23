@@ -18,7 +18,7 @@ const OffPistePage: React.FC = () => {
           <h1 className="text-[60px] md:text-[100px] lg:text-[140px] font-black leading-none tracking-tighter text-white uppercase drop-shadow-2xl">
             Off <span className="text-[#F29100]">Piste</span>
           </h1>
-          <p className="font-serif italic text-white/80 text-[18px] md:text-[24px] mt-4">Alpine beats & cozy retreats.</p>
+          <p className="text-white/80 text-[18px] md:text-[24px] mt-4">Alpine beats & cozy retreats.</p>
           <div className="w-24 md:w-40 h-1.5 md:h-2 bg-[#F29100] mt-10"></div>
         </div>
       </section>

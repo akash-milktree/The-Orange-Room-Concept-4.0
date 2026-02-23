@@ -1,67 +1,66 @@
 
 import React, { useState } from 'react';
 import BookingSection from '../components/BookingSection.tsx';
-import { Utensils, Zap, Heart, Sparkles, Star, ChevronLeft, ChevronRight, Maximize2, X, Info, Download, Clock, Cookie } from 'lucide-react';
+import { Utensils, Heart, Star, ChevronLeft, ChevronRight, Maximize2, X, Info, Download, Clock, Pizza } from 'lucide-react';
 
 const FoodMenuPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // Placeholder URLs for the actual food menu board images
   const menuImages = [
-    "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Food-Menu-Board-1.jpg",
-    "https://www.orangerooms.co.uk/wp-content/uploads/2024/01/Food-Menu-Board-2.jpg",
+    "/photos/drinks/menu/SUMMER-INSIDE-1.png",
+    "/photos/drinks/menu/SUMMER-OUTSIDE-1.png",
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % menuImages.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + menuImages.length) % menuImages.length);
 
-  const fonduePricing = [
-    { label: "1 person", price: "£7.99" },
-    { label: "2 people", price: "£14.95" },
-    { label: "3 people", price: "£19.95" },
-    { label: "4 people", price: "£24.95" },
-    { label: "5 people", price: "£29.95" },
-    { label: "6 people", price: "£34.95" },
-  ];
-
-  const sections = [
+  const pizzaMenu = [
     {
-      title: "Tropical Tacos",
-      items: [
-        { name: "Tiki Taco Tray", price: "£14.00", desc: "Choice of pulled pork or spicy jackfruit, topped with pineapple salsa and lime crema. (4 Tacos)" },
-        { name: "Crispy Shrimp Tacos", price: "£15.00", desc: "Panko prawns, slaw, sriracha mayo and coriander." },
-        { name: "Halloumi Sunshine", price: "£13.50", desc: "Grilled halloumi, smashed avocado, and mango habanero sauce." },
-        { name: "Beef Barbacoa", price: "£15.50", desc: "Slow cooked beef, pickled red onions and chipotle cream." }
-      ]
+      name: "Margherita",
+      price: "£12.95",
+      desc: "San Marzano tomato base, fresh fior di latte mozzarella, torn basil, extra virgin olive oil.",
+      tags: ["V"]
     },
     {
-      title: "Brunch Favorites",
-      items: [
-        { name: "Sourdough Stacks", price: "£9.50", desc: "Smashed avocado, poached eggs, and chili flakes on thick sourdough." },
-        { name: "Breakfast Burrito", price: "£10.00", desc: "Scrambled eggs, chorizo, black beans, cheese and house salsa." },
-        { name: "Pancake Tower", price: "£8.50", desc: "Fluffy pancakes with maple syrup, berries and whipped cream." },
-        { name: "The OG Breakfast", price: "£11.00", desc: "The full works. Eggs, bacon, sausage, beans, mushrooms and toast." }
-      ]
+      name: "Pepperoni Fire",
+      price: "£12.95",
+      desc: "Tomato base, mozzarella, double pepperoni, Calabrian chilli oil, honey drizzle.",
+      tags: []
     },
     {
-      title: "Party Sharing",
-      items: [
-        { name: "Orange Rooms Platter", price: "£22.00", desc: "Wings, tacos, wedges, and onion rings. Perfect for 3-4 people." },
-        { name: "Nachos Supremo", price: "£12.50", desc: "Heaps of cheese, jalapeños, salsa, guac and sour cream. Add chili for £3." },
-        { name: "Slider Selection", price: "£15.00", desc: "Six mini burgers: 2 beef, 2 chicken, 2 veggie. Great for groups." },
-        { name: "Churro Box", price: "£7.50", desc: "Warm churros with cinnamon sugar and a chocolate dipping sauce." }
-      ]
-    }
+      name: "Fungi & Truffle",
+      price: "£12.95",
+      desc: "White cream base, wild mushrooms, mozzarella, truffle oil, fresh thyme.",
+      tags: ["V"]
+    },
+    {
+      name: "BBQ Chicken",
+      price: "£12.95",
+      desc: "Smoky BBQ base, pulled chicken, red onion, mozzarella, fresh coriander.",
+      tags: []
+    },
+    {
+      name: "Nduja & Burrata",
+      price: "£12.95",
+      desc: "Tomato base, spicy nduja sausage, creamy burrata, rocket, lemon zest.",
+      tags: []
+    },
+    {
+      name: "Vegan Garden",
+      price: "£12.95",
+      desc: "Tomato base, vegan mozzarella, roasted peppers, artichoke, olives, fresh basil.",
+      tags: ["VE", "V"]
+    },
   ];
 
   return (
     <div className="bg-[#1a1919] min-h-screen">
       {/* HERO SECTION */}
       <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden border-b-2 border-white/50">
-        <img 
-          src="https://www.orangerooms.co.uk/wp-content/uploads/2024/01/themed-brunches.jpg" 
-          alt="Food Menu" 
+        <img
+          src="/photos/food/food page header.jpg"
+          alt="Food Menu"
           className="w-full h-full object-cover brightness-[0.5] contrast-[1.2]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1919] via-transparent to-black/60" />
@@ -70,85 +69,91 @@ const FoodMenuPage: React.FC = () => {
           <h1 className="text-[54px] md:text-[90px] lg:text-[120px] font-black leading-none tracking-tighter text-white uppercase">
             Food <span className="text-[#F29100]">Menu</span>
           </h1>
-          <div className="mt-10 flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 border border-white/20">
+          <div className="mt-10 flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 border border-white/50">
             <Clock className="w-5 h-5 text-[#F29100]" />
             <span className="text-[14px] font-black tracking-[0.2em] uppercase">KITCHEN OPEN TUESDAY — SUNDAY</span>
           </div>
         </div>
       </section>
 
-      {/* FONDUE EXPERIENCE SECTION (From Screenshot) */}
-      <section className="bg-white text-[#1a1919] py-24 px-6 border-b-2 border-[#1a1919] relative overflow-hidden">
-         <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-               <div className="space-y-12">
-                  <div className="space-y-4">
-                     <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">SIGNATURE SPECIAL</span>
-                     <h2 className="text-[42px] md:text-[64px] font-black uppercase leading-[0.9] tracking-tighter">
-                        Bottomless <br /> <span className="text-[#F29100]">Fondue</span> Experience
-                     </h2>
-                     <p className="text-[18px] font-light leading-relaxed text-[#1a1919]/70">
-                        Welcome to Orange Rooms Southampton, proudly serving the city for 23 incredible years! Dip into something delicious with our Bottomless Fondue – perfect for date nights, mate nights, or any excuse to indulge.
-                     </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                     <div className="p-8 border-2 border-[#1a1919] flex flex-col gap-4 group hover:bg-[#1a1919] hover:text-white transition-all">
-                        <Cookie className="w-10 h-10 text-[#F29100]" />
-                        <h4 className="text-[18px] font-black uppercase">SWEET</h4>
-                        <p className="text-[14px] font-medium opacity-70">Flowing chocolate, marshmallows, and sweet treats.</p>
-                     </div>
-                     <div className="p-8 border-2 border-[#1a1919] flex flex-col gap-4 group hover:bg-[#1a1919] hover:text-white transition-all">
-                        <Utensils className="w-10 h-10 text-[#F29100]" />
-                        <h4 className="text-[18px] font-black uppercase">SAVOURY</h4>
-                        <p className="text-[14px] font-medium opacity-70">Gooey melted cheese, cured meats, and savoury bites.</p>
-                     </div>
-                  </div>
-               </div>
-
-               <div className="bg-[#1a1919] p-10 md:p-14 relative shadow-2xl">
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-[#F29100] flex items-center justify-center -translate-y-1/2 translate-x-1/2 rotate-12">
-                     <Star className="text-white w-10 h-10 fill-white" />
-                  </div>
-                  <h3 className="text-white text-[24px] font-black uppercase tracking-widest mb-10 border-b border-white/10 pb-4">PRICING (PER GROUP)</h3>
-                  <div className="space-y-6">
-                     {fonduePricing.map((item, idx) => (
-                        <div key={idx} className="flex justify-between items-center group">
-                           <span className="text-white/40 text-[14px] font-black uppercase tracking-[0.2em] group-hover:text-[#F29100] transition-colors">{item.label}</span>
-                           <div className="flex-1 mx-4 border-b border-white/5 border-dotted"></div>
-                           <span className="text-white text-[18px] font-black">{item.price}</span>
-                        </div>
-                     ))}
-                  </div>
-                  <a href="#dmn-booking-container" className="w-full mt-12 py-5 bg-[#F29100] text-white text-[12px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2">
-                     BOOK FONDUE NOW <ChevronRight className="w-4 h-4" />
-                  </a>
-               </div>
+      {/* FIGARATI PIZZA COLLABORATION SECTION */}
+      <section className="bg-white text-[#1a1919] border-b-2 border-[#1a1919] relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+          {/* Left — Text */}
+          <div className="flex flex-col justify-center px-10 py-20 md:px-16 md:py-24 border-b-2 lg:border-b-0 lg:border-r-2 border-[#1a1919] space-y-8">
+            <div className="space-y-3">
+              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">COLLABORATION</span>
+              <h2 className="text-[42px] md:text-[60px] font-black uppercase leading-[0.9] tracking-tighter">
+                Pizza by <br /><span className="text-[#F29100]">Figurati</span>
+              </h2>
+              <p className="text-[17px] font-light leading-relaxed text-[#1a1919]/70 max-w-md">
+                We've teamed up with Southampton's finest pizza makers, Figurati, to bring stone-baked perfection straight to your table at Orange Rooms. Every pizza is handcrafted to order — real ingredients, real flavour.
+              </p>
             </div>
-         </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-7 border-2 border-[#1a1919] flex flex-col gap-3 hover:bg-[#1a1919] hover:text-white transition-all group">
+                <Pizza className="w-9 h-9 text-[#F29100]" />
+                <h4 className="text-[16px] font-black uppercase">Stone Baked</h4>
+                <p className="text-[13px] font-medium opacity-70">Authentic Italian technique — crispy base, pillowy crust.</p>
+              </div>
+              <div className="p-7 border-2 border-[#1a1919] flex flex-col gap-3 hover:bg-[#1a1919] hover:text-white transition-all group">
+                <Utensils className="w-9 h-9 text-[#F29100]" />
+                <h4 className="text-[16px] font-black uppercase">Fresh Daily</h4>
+                <p className="text-[13px] font-medium opacity-70">Dough proved daily, toppings sourced fresh every morning.</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 pt-2">
+              <div className="bg-[#1a1919] px-8 py-5">
+                <span className="text-white text-[11px] font-black uppercase tracking-[0.3em]">All Pizzas</span>
+                <div className="text-[#F29100] text-[36px] font-black leading-none mt-1">£12.95</div>
+              </div>
+              <a href="#dmn-booking-container" className="flex-1 py-5 border-2 border-[#1a1919] text-[#1a1919] text-[12px] font-black uppercase tracking-[0.2em] hover:bg-[#F29100] hover:border-[#F29100] hover:text-white transition-all flex items-center justify-center gap-2">
+                Book a Table <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right — Image */}
+          <div className="relative min-h-[50vh] lg:min-h-full">
+            <img
+              src="/photos/food/Pizza 1.jpg"
+              alt="Figurati Pizza at Orange Rooms"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#F29100]/10 mix-blend-multiply" />
+            {/* Figurati badge */}
+            <div className="absolute bottom-8 left-8 bg-[#1a1919]/90 backdrop-blur-md px-6 py-4 border border-white/50">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50">In collaboration with</span>
+              <div className="text-white text-[22px] font-black uppercase tracking-tight mt-1">Figurati</div>
+              <div className="text-[#F29100] text-[11px] font-black uppercase tracking-widest">Southampton</div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* REFRESHED MENU CAROUSEL (Gallery) */}
+      {/* PIZZA MENU CAROUSEL */}
       <section className="bg-[#1a1919] py-20 px-6 border-b-2 border-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="space-y-4">
-              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">THE KITCHEN</span>
+              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGARATI</span>
               <h2 className="text-[32px] md:text-[54px] font-black text-white uppercase leading-none tracking-tighter">
-                New Refreshed <span className="text-[#F29100]">Food Menu</span>
+                The <span className="text-[#F29100]">Pizza Menu</span>
               </h2>
             </div>
             <div className="flex gap-4">
-              <button onClick={prevSlide} className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
+              <button onClick={prevSlide} className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <button onClick={nextSlide} className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
+              <button onClick={nextSlide} className="w-12 h-12 rounded-full border-2 border-white/50 flex items-center justify-center hover:border-[#F29100] hover:text-[#F29100] transition-all text-white">
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
           </div>
 
-          <div className="relative group aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-black/40 border-2 border-white/10">
+          <div className="relative group min-h-[60vh] overflow-hidden bg-black/40 border-2 border-white/50">
             <div 
               className="w-full h-full flex transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -168,7 +173,7 @@ const FoodMenuPage: React.FC = () => {
                   <div className="absolute bottom-10 right-10 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
                       onClick={() => setIsLightboxOpen(true)}
-                      className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20 text-white hover:bg-[#F29100] transition-colors"
+                      className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/50 text-white hover:bg-[#F29100] transition-colors"
                     >
                       <Maximize2 className="w-6 h-6" />
                     </button>
@@ -233,29 +238,47 @@ const FoodMenuPage: React.FC = () => {
         </div>
       )}
 
-      {/* TEXT MENU GRID */}
+      {/* FIGARATI PIZZA MENU GRID */}
       <section className="bg-white text-[#1a1919] py-24 px-6 border-b-2 border-[#1a1919]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-0 lg:divide-x-2 lg:divide-[#1a1919]/10">
-            {sections.map((section, idx) => (
-              <div key={idx} className="px-0 lg:px-12 space-y-12">
-                <div className="space-y-2">
-                  <h2 className="text-[32px] md:text-[42px] font-black uppercase tracking-tighter leading-none">{section.title}</h2>
-                  <div className="w-12 h-1 bg-[#F29100]"></div>
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <div className="space-y-3">
+              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGARATI</span>
+              <h2 className="text-[36px] md:text-[54px] font-black uppercase leading-none tracking-tighter">
+                Our <span className="text-[#F29100]">Pizzas</span>
+              </h2>
+            </div>
+            <div className="flex items-center gap-3 bg-[#1a1919] px-8 py-4">
+              <Star className="w-5 h-5 text-[#F29100] fill-[#F29100]" />
+              <span className="text-white text-[13px] font-black uppercase tracking-widest">All Pizzas — £12.95</span>
+            </div>
+          </div>
+
+          {/* Pizza Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t-2 border-l-2 border-[#1a1919]">
+            {pizzaMenu.map((pizza, idx) => (
+              <div key={idx} className="border-b-2 border-r-2 border-[#1a1919] p-8 group hover:bg-[#F29100]/5 transition-colors">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-[20px] font-black uppercase tracking-tight group-hover:text-[#F29100] transition-colors leading-tight">{pizza.name}</h3>
+                  <span className="text-[14px] font-black text-[#F29100] ml-4 shrink-0">{pizza.price}</span>
                 </div>
-                <div className="space-y-10">
-                  {section.items.map((item, i) => (
-                    <div key={i} className="group">
-                      <div className="flex justify-between items-baseline mb-2">
-                        <h4 className="text-[18px] font-black uppercase tracking-tight group-hover:text-[#F29100] transition-colors">{item.name}</h4>
-                        <span className="text-[14px] font-bold text-[#F29100]">{item.price}</span>
-                      </div>
-                      <p className="text-[13px] text-[#1a1919]/60 font-light leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-[13px] text-[#1a1919]/60 font-light leading-relaxed mb-4">{pizza.desc}</p>
+                {pizza.tags.length > 0 && (
+                  <div className="flex gap-2">
+                    {pizza.tags.map((tag, t) => (
+                      <span key={t} className="text-[10px] font-black uppercase tracking-widest px-2 py-1 border border-[#1a1919]/20 text-[#1a1919]/40">{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
+          </div>
+
+          {/* Figurati credit */}
+          <div className="mt-10 flex items-center gap-4">
+            <div className="w-12 h-1 bg-[#F29100]"></div>
+            <p className="text-[12px] font-black uppercase tracking-widest text-[#1a1919]/40">Pizza crafted by Figurati — Southampton's artisan pizza makers</p>
           </div>
         </div>
       </section>

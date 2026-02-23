@@ -3,10 +3,10 @@ import { Star, Award, ShieldCheck, Zap } from 'lucide-react';
 
 const AwardsSection: React.FC = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[700px] border-b-2 border-white/40 bg-[#1a1919]">
+    <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[700px] border-b-2 border-white/50 bg-[#1a1919]">
       
       {/* LEFT: Large Atmospheric Action Shot */}
-      <div className="relative h-[300px] sm:h-[400px] lg:h-full overflow-hidden border-b-2 lg:border-b-0 lg:border-r-2 border-white/40">
+      <div className="relative h-[300px] sm:h-[400px] lg:h-full overflow-hidden border-b-2 lg:border-b-0 lg:border-r-2 border-white/50">
         <img 
           src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=1600" 
           alt="Master Mixologist pouring a cocktail" 
@@ -19,7 +19,7 @@ const AwardsSection: React.FC = () => {
       <div className="p-8 sm:p-12 lg:p-20 flex flex-col justify-center relative">
         
         {/* Floating Vertical Label - Responsive positioning */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 h-32 sm:h-40 flex items-center justify-center border-l-2 border-white/40 bg-[#1a1919] hidden sm:flex">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 h-32 sm:h-40 flex items-center justify-center border-l-2 border-white/50 bg-[#1a1919] hidden sm:flex">
           <span className="vertical-text text-[8px] sm:text-[9px] uppercase tracking-[0.6em] text-white/40 font-black px-3 sm:px-4">HONORS</span>
         </div>
 
