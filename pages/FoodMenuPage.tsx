@@ -8,8 +8,7 @@ const FoodMenuPage: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const menuImages = [
-    "/photos/drinks/menu/SUMMER-INSIDE-1.png",
-    "/photos/drinks/menu/SUMMER-OUTSIDE-1.png",
+    "/photos/food/menu/Pizza Menu.jpg",
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % menuImages.length);
@@ -17,40 +16,28 @@ const FoodMenuPage: React.FC = () => {
 
   const pizzaMenu = [
     {
-      name: "Margherita",
+      name: "Diavolo",
       price: "£12.95",
-      desc: "San Marzano tomato base, fresh fior di latte mozzarella, torn basil, extra virgin olive oil.",
+      desc: "Nduja, fresh chilli, fennel salami, rocket.",
+      tags: []
+    },
+    {
+      name: "Chorizo",
+      price: "£12.95",
+      desc: "With feta and hot honey.",
+      tags: []
+    },
+    {
+      name: "Classic Margarita",
+      price: "£12.95",
+      desc: "Fior di latte, marzano tomato, basil.",
       tags: ["V"]
     },
     {
-      name: "Pepperoni Fire",
+      name: "Caprino",
       price: "£12.95",
-      desc: "Tomato base, mozzarella, double pepperoni, Calabrian chilli oil, honey drizzle.",
-      tags: []
-    },
-    {
-      name: "Fungi & Truffle",
-      price: "£12.95",
-      desc: "White cream base, wild mushrooms, mozzarella, truffle oil, fresh thyme.",
+      desc: "Goat's cheese, red onion marmalade, cherry tomatoes.",
       tags: ["V"]
-    },
-    {
-      name: "BBQ Chicken",
-      price: "£12.95",
-      desc: "Smoky BBQ base, pulled chicken, red onion, mozzarella, fresh coriander.",
-      tags: []
-    },
-    {
-      name: "Nduja & Burrata",
-      price: "£12.95",
-      desc: "Tomato base, spicy nduja sausage, creamy burrata, rocket, lemon zest.",
-      tags: []
-    },
-    {
-      name: "Vegan Garden",
-      price: "£12.95",
-      desc: "Tomato base, vegan mozzarella, roasted peppers, artichoke, olives, fresh basil.",
-      tags: ["VE", "V"]
     },
   ];
 
@@ -138,7 +125,7 @@ const FoodMenuPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div className="space-y-4">
-              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGARATI</span>
+              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGURATI</span>
               <h2 className="text-[32px] md:text-[54px] font-black text-white uppercase leading-none tracking-tighter">
                 The <span className="text-[#F29100]">Pizza Menu</span>
               </h2>
@@ -244,7 +231,7 @@ const FoodMenuPage: React.FC = () => {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div className="space-y-3">
-              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGARATI</span>
+              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-[#F29100]">PIZZA BY FIGURATI</span>
               <h2 className="text-[36px] md:text-[54px] font-black uppercase leading-none tracking-tighter">
                 Our <span className="text-[#F29100]">Pizzas</span>
               </h2>
