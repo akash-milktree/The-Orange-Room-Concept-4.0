@@ -5,31 +5,38 @@ const BookingSection: React.FC = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Give the DOM a tick to render the widget div, then trigger DMN init
-    const timer = setTimeout(() => {
-      // If the DMN script has already loaded and exposed an init method, call it
-      const win = window as any;
-      if (win.DMN && typeof win.DMN.init === 'function') {
-        win.DMN.init();
-      } else if (win.BookingsPartner && typeof win.BookingsPartner.init === 'function') {
-        win.BookingsPartner.init();
-      } else {
-        // Script not loaded yet — append it dynamically as fallback
-        if (!document.querySelector('script[data-dmn-widget]')) {
-          const s = document.createElement('script');
-          s.src = 'https://widgets.designmynight.com/bookings-partner.min.js';
-          s.setAttribute('data-dmn-widget', 'true');
-          s.async = true;
-          document.body.appendChild(s);
-        }
-      }
-    }, 100);
+    const container = widgetRef.current;
+    if (!container) return;
 
-    return () => clearTimeout(timer);
+    // Remove any previous widget script inside the container
+    container.querySelectorAll('script').forEach(s => s.remove());
+
+    // Inject the DMN script directly into the container so the widget renders here
+    const script = document.createElement('script');
+    script.src = '//widgets.designmynight.com/bookings-partner.min.js';
+    script.setAttribute('dmn-booking-form', 'true');
+    script.setAttribute('venue', '5f996292f3f8486bfd7679b4');
+    script.setAttribute('hide-offers', 'false');
+    script.setAttribute('hide-powered-by', 'true');
+    script.setAttribute('search-venues', 'false');
+    script.setAttribute('monday-first', 'true');
+    container.appendChild(script);
+
+    return () => {
+      container.querySelectorAll('script').forEach(s => s.remove());
+    };
   }, []);
 
   return (
     <section className="bg-[#1a1919] py-24 lg:py-32 border-b-2 border-white/50 flex flex-col items-center justify-center relative overflow-hidden">
+      {/* DMN widget: full-width container styles */}
+      <style>{`
+        #dmn-booking-container > div,
+        #dmn-booking-container iframe {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      `}</style>
       {/* Background Graphic Elements */}
       <div className="absolute top-0 left-0 w-full h-2 bg-[#F29100]/20 blur-xl opacity-20"></div>
 
@@ -43,21 +50,11 @@ const BookingSection: React.FC = () => {
 
       {/* Widget Container */}
       <div className="w-full max-w-[1000px] px-6">
-        <div className="relative z-10 p-1 lg:p-px bg-white/40 rounded-sm overflow-hidden shadow-2xl">
-          {/* DesignMyNight widget — data attributes on the div itself */}
+        <div className="relative z-10 border border-white/10 rounded-sm overflow-hidden">
           <div
             ref={widgetRef}
             id="dmn-booking-container"
             className="bg-[#1a1919] min-h-[450px] transition-all duration-500"
-            data-dmn-booking-form="true"
-            data-venue="5f996292f3f8486bfd7679b4"
-            data-hide-offers="false"
-            data-hide-powered-by="false"
-            data-search-venues="false"
-            data-monday-first="true"
-            data-show-type-first="true"
-            data-google-analytics-code="UA-54986825-1"
-            data-return-url="https://www.orangerooms.co.uk/booking/thank-you/"
           />
         </div>
 
