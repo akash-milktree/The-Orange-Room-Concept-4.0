@@ -28,15 +28,16 @@ import NeonJunglePage from './pages/NeonJunglePage.tsx';
 import DrinksMenuPage from './pages/DrinksMenuPage.tsx';
 import FoodMenuPage from './pages/FoodMenuPage.tsx';
 import BookPage from './pages/BookPage.tsx';
+import EventsPage from './pages/EventsPage.tsx';
 
-export type View = 
-  | 'home' 
-  | 'tables' 
-  | 'tiki' 
-  | 'full-venue' 
-  | 'half-venue' 
-  | 'off-piste' 
-  | 'mile-high' 
+export type View =
+  | 'home'
+  | 'tables'
+  | 'tiki'
+  | 'full-venue'
+  | 'half-venue'
+  | 'off-piste'
+  | 'mile-high'
   | 'cocktail-bar'
   | 'brunches'
   | 'private-hire'
@@ -45,7 +46,8 @@ export type View =
   | 'neon-jungle'
   | 'drinks-menu'
   | 'food-menu'
-  | 'book';
+  | 'book'
+  | 'events';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +70,7 @@ const App: React.FC = () => {
       const validViews: View[] = [
         'tables', 'tiki', 'full-venue', 'half-venue', 'off-piste', 
         'mile-high', 'cocktail-bar', 'brunches', 'private-hire', 
-        'corporate-hire', 'vip-bookings', 'neon-jungle', 'drinks-menu', 'food-menu', 'book'
+        'corporate-hire', 'vip-bookings', 'neon-jungle', 'drinks-menu', 'food-menu', 'book', 'events'
       ];
       if (validViews.includes(hash as View)) {
         setCurrentView(hash as View);
@@ -116,6 +118,7 @@ const App: React.FC = () => {
         {currentView === 'drinks-menu' && <DrinksMenuPage />}
         {currentView === 'food-menu' && <FoodMenuPage />}
         {currentView === 'book' && <BookPage />}
+        {currentView === 'events' && <EventsPage />}
         <Footer onNavigate={navigateTo} />
       </main>
     </div>

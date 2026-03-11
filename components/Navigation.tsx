@@ -29,6 +29,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
       href: '#', 
       hasSubmenu: true, 
       submenu: [
+        { label: 'EVENTS', view: 'events' as const },
         { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const },
         { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const },
         { label: 'NEON JUNGLE', view: 'neon-jungle' as const }
