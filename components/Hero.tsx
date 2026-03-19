@@ -63,18 +63,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </div>
       </div>
       
-      {/* RIGHT BOX: Atmosphere Video */}
+      {/* RIGHT BOX: Atmosphere Image */}
       <div className="relative h-[400px] lg:h-full group overflow-hidden bg-black">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+        <img
+          src="/photos/homepage/main_cocktail_bar.jpg"
+          alt="Orange Rooms atmosphere"
           className="w-full h-full object-cover object-center grayscale-[0.1] contrast-[1.1] transition-transform duration-[10000ms] ease-out scale-105 group-hover:scale-110"
-        >
-          <source src="/photos/wp-assets/x2mate.com-Orange-Rooms-Cocktails-LG-1080p.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#1a1919]/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
       
