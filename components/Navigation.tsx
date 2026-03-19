@@ -12,34 +12,34 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const menuItems = [
-    { 
-      label: 'VENUES', 
-      href: '#', 
-      hasSubmenu: true, 
+    {
+      label: 'VENUES',
+      href: '/tables',
+      hasSubmenu: true,
       submenu: [
-        { label: 'OUR TABLES', view: 'tables' as const },
-        { label: 'TIKI', view: 'tiki' as const },
-        { label: 'OFF PISTE', view: 'off-piste' as const },
-        { label: 'FULL VENUE', view: 'full-venue' as const },
-        { label: 'HALF VENUE', view: 'half-venue' as const },
-        { label: 'MILE HIGH', view: 'mile-high' as const }
-      ] 
+        { label: 'OUR TABLES', view: 'tables' as const, href: '/tables' },
+        { label: 'TIKI', view: 'tiki' as const, href: '/tiki' },
+        { label: 'OFF PISTE', view: 'off-piste' as const, href: '/off-piste' },
+        { label: 'FULL VENUE', view: 'full-venue' as const, href: '/full-venue' },
+        { label: 'HALF VENUE', view: 'half-venue' as const, href: '/half-venue' },
+        { label: 'MILE HIGH', view: 'mile-high' as const, href: '/mile-high' }
+      ]
     },
-    { 
-      label: 'LINEUP', 
-      href: '#', 
-      hasSubmenu: true, 
+    {
+      label: 'LINEUP',
+      href: '/events',
+      hasSubmenu: true,
       submenu: [
-        { label: 'EVENTS', view: 'events' as const },
-        { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const },
-        { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const },
-        { label: 'NEON JUNGLE', view: 'neon-jungle' as const }
-      ] 
+        { label: 'EVENTS', view: 'events' as const, href: '/events' },
+        { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const, href: '/cocktail-bar' },
+        { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const, href: '/brunches' },
+        { label: 'NEON JUNGLE', view: 'neon-jungle' as const, href: '/neon-jungle' }
+      ]
     },
-    { label: 'PRIVATE HIRE', href: '#', view: 'private-hire' as const },
-    { label: 'CORPORATE HIRE', href: '#', view: 'corporate-hire' as const },
-    { label: 'VIP BOOKINGS', href: '#', view: 'vip-bookings' as const },
-    { label: 'BOOK', href: '#', view: 'book' as const, isSpecial: true },
+    { label: 'PRIVATE HIRE', href: '/private-hire', view: 'private-hire' as const },
+    { label: 'CORPORATE HIRE', href: '/corporate-hire', view: 'corporate-hire' as const },
+    { label: 'VIP BOOKINGS', href: '/vip-bookings', view: 'vip-bookings' as const },
+    { label: 'BOOK', href: '/book', view: 'book' as const, isSpecial: true },
   ];
 
   const handleClick = (view?: View) => {
@@ -106,9 +106,9 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
                 `}>
                   <div className="flex flex-col">
                     {item.submenu?.map((sub: any) => (
-                      <a 
+                      <a
                         key={sub.label}
-                        href="#" 
+                        href={sub.href}
                         onClick={(e) => {
                           e.preventDefault();
                           handleClick(sub.view);

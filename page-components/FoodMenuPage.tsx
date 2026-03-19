@@ -186,7 +186,7 @@ const FoodMenuPage: React.FC = () => {
              <div className="flex items-center gap-2 text-white/40 text-[11px] font-black uppercase tracking-widest">
                 <Info className="w-4 h-4 text-[#F29100]" /> Click image to expand for full details
              </div>
-             <a href="#" className="flex items-center gap-2 text-[#F29100] text-[11px] font-black uppercase tracking-widest hover:text-white transition-colors">
+             <a href="/food-menu" className="flex items-center gap-2 text-[#F29100] text-[11px] font-black uppercase tracking-widest hover:text-white transition-colors">
                 <Download className="w-4 h-4" /> Download PDF Menu
              </a>
           </div>

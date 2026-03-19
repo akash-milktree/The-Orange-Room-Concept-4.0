@@ -74,10 +74,10 @@ const VenuesTabsSection: React.FC<VenuesTabsSectionProps> = ({ onNavigate }) => 
           </div>
 
           <div className="mt-8 md:mt-16 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.(activeTab.id as View); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 bg-[#F29100] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:bg-white hover:text-[#1a1919] transition-all duration-300 shadow-xl cursor-pointer">
+            <a href={`/${activeTab.id}`} onClick={(e) => { e.preventDefault(); onNavigate?.(activeTab.id as View); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 bg-[#F29100] text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:bg-white hover:text-[#1a1919] transition-all duration-300 shadow-xl cursor-pointer">
               View Details
             </a>
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/50 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl cursor-pointer">
+            <a href="/book" onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }} className="w-full sm:w-64 md:w-72 py-4 md:py-6 border-2 border-white/50 text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-center hover:border-[#F29100] hover:text-[#F29100] transition-all duration-300 shadow-xl cursor-pointer">
               Book Now
             </a>
           </div>

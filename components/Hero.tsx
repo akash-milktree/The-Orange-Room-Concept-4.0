@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href="#"
+                href="/book"
                 onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }}
                 className="inline-flex items-center justify-center px-10 py-5 bg-[#F29100] text-white font-black text-[12px] tracking-[0.25em] uppercase hover:bg-white hover:text-[#1a1919] transition-all group shadow-2xl"
               >

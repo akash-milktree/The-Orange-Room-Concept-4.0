@@ -25,7 +25,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen, onN
       {/* Quick Actions */}
       <div className="flex h-full">
         <a
-          href="#"
+          href="/book"
           onClick={(e) => { e.preventDefault(); onNavigate?.('book'); }}
           className="h-full px-6 bg-[#F29100] flex items-center justify-center gap-2 border-l-2 border-white/20 transition-active"
         >
