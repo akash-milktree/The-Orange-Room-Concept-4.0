@@ -14,11 +14,11 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleMenu, isMenuOpen, onN
   return (
     <header className="fixed top-0 left-0 right-0 h-20 bg-[#1a1919] z-[100] border-b-2 border-white/50 flex items-center lg:hidden shadow-xl">
       {/* Brand Logo Area */}
-      <div className="flex-1 px-4 flex items-center gap-3">
-        <img 
-          src="/photos/wp-assets/orange-logo-1.png" 
-          alt="Orange Rooms" 
-          className="h-10 w-auto"
+      <div className="flex-1 min-w-0 px-4 flex items-center">
+        <img
+          src="/photos/wp-assets/orange-logo-1.png"
+          alt="Orange Rooms"
+          className="h-8 sm:h-10 w-auto shrink-0"
         />
       </div>
 
