@@ -17,14 +17,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
     { label: 'Off Piste', view: 'off-piste' as const },
     { label: 'Full Venue', view: 'full-venue' as const },
     { label: 'Half Venue', view: 'half-venue' as const },
-    { label: 'Mile High', view: 'mile-high' as const }
+    { label: 'Mile High', view: 'mile-high' as const },
+    { label: 'Neon Jungle', view: 'neon-jungle' as const }
   ];
 
-  const lineupSubmenu = [
-    { label: 'Events', view: 'events' as const },
+  const eventsSubmenu = [
+    { label: 'Line Up', view: 'events' as const },
     { label: 'Cocktail Bar', view: 'cocktail-bar' as const },
-    { label: 'Bottomless Brunches', view: 'brunches' as const },
-    { label: 'Neon Jungle', view: 'neon-jungle' as const }
+    { label: 'Bottomless Brunches', view: 'brunches' as const }
   ];
 
   const menusSubmenu = [
@@ -75,11 +75,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
               </div>
             </div>
 
-            {/* VENUES + Horizontal Submenu */}
+            {/* VENUE + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-150 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
                 <a href="/tables" onClick={(e) => { e.preventDefault(); handleLinkClick('tables'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
-                  Venues
+                  Venue
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
                   {venuesSubmenu.map((sub) => (
@@ -91,14 +91,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate }) 
               </div>
             </div>
 
-            {/* LINEUP + Horizontal Submenu */}
+            {/* EVENTS + Horizontal Submenu */}
             <div className={`transition-all duration-700 delay-225 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-12">
-                <a href="/" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
-                  Lineup
+                <a href="/events" onClick={(e) => { e.preventDefault(); handleLinkClick('events'); }} className="text-[52px] sm:text-[68px] md:text-[80px] lg:text-[100px] font-sans font-black text-[#f5f5f1] hover:text-[#F29100] leading-tight tracking-tight transition-all">
+                  Events
                 </a>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-2 py-2">
-                  {lineupSubmenu.map((sub) => (
+                  {eventsSubmenu.map((sub) => (
                     <button key={sub.label} onClick={() => handleLinkClick(sub.view)} className="text-[12px] md:text-[14px] font-sans font-black uppercase tracking-[0.2em] text-white hover:text-[#F29100] transition-colors text-left flex items-center gap-1.5 group">
                       <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" /> {sub.label}
                     </button>

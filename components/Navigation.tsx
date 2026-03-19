@@ -13,7 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
 
   const menuItems = [
     {
-      label: 'VENUES',
+      label: 'VENUE',
       href: '/tables',
       hasSubmenu: true,
       submenu: [
@@ -22,18 +22,18 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
         { label: 'OFF PISTE', view: 'off-piste' as const, href: '/off-piste' },
         { label: 'FULL VENUE', view: 'full-venue' as const, href: '/full-venue' },
         { label: 'HALF VENUE', view: 'half-venue' as const, href: '/half-venue' },
-        { label: 'MILE HIGH', view: 'mile-high' as const, href: '/mile-high' }
+        { label: 'MILE HIGH', view: 'mile-high' as const, href: '/mile-high' },
+        { label: 'NEON JUNGLE', view: 'neon-jungle' as const, href: '/neon-jungle' }
       ]
     },
     {
-      label: 'LINEUP',
+      label: 'EVENTS',
       href: '/events',
       hasSubmenu: true,
       submenu: [
-        { label: 'EVENTS', view: 'events' as const, href: '/events' },
+        { label: 'LINE UP', view: 'events' as const, href: '/events' },
         { label: 'COCKTAIL BAR', view: 'cocktail-bar' as const, href: '/cocktail-bar' },
-        { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const, href: '/brunches' },
-        { label: 'NEON JUNGLE', view: 'neon-jungle' as const, href: '/neon-jungle' }
+        { label: 'BOTTOMLESS BRUNCHES', view: 'brunches' as const, href: '/brunches' }
       ]
     },
     { label: 'PRIVATE HIRE', href: '/private-hire', view: 'private-hire' as const },
